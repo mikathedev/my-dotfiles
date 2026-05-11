@@ -1,0 +1,28 @@
+/* ============================================
+   Rofi — config.rasi
+   Place at: ~/.config/rofi/config.rasi
+   ============================================ */
+
+configuration {
+    /* Use drun mode for app launching */
+    modi:               "drun,run,window";
+    show-icons:         true;
+    icon-theme:         "Papirus-Dark";
+    drun-display-format: "{name}";
+
+    /* Close when clicking outside */
+    click-to-exit:      true;
+
+    /* Behavior */
+    disable-history:    false;
+    hide-scrollbar:     true;
+    sidebar-mode:       false;
+
+    /* Matching */
+    matching:           "fuzzy";
+    sort:               true;
+    sorting-method:     "fzf";
+}
+
+/* Load theme */
+@theme "catppuccin-mocha"

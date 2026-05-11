@@ -1,0 +1,394 @@
+2026-05-09T21:33:32 exception: Failed to open "/home/mika/.config/mpd/state": No such file or directory
+2026-05-09T21:33:32 update: added g/Mr. Brightside.mp3
+2026-05-09T21:33:32 update: added g/Portugal. The Man - Feel It Still (Official Music Video).mp3
+2026-05-09T21:33:32 update: added g/7 rings.mp3
+2026-05-09T21:36:23 update: added g/Seventh Heaven.mp3
+2026-05-09T21:36:23 update: added g/Tough Luck.mp3
+2026-05-09T21:36:23 update: added g/Mr. Blue Sky.mp3
+2026-05-09T21:36:23 update: added g/Last Friday Night (T.G.I.F.).mp3
+2026-05-09T21:36:23 update: added g/Falling Behind.mp3
+2026-05-09T21:36:23 update: added g/The Kinks - Supersonic Rocket Ship (Audio).mp3
+2026-05-09T21:37:14 exception: Access to local files via TCP is not allowed
+2026-05-09T21:37:25 exception: Access to local files via TCP is not allowed
+2026-05-09T21:39:13 exception: Access to local files via TCP is not allowed
+2026-05-09T21:39:25 exception: No such directory
+2026-05-09T21:39:25 exception: No such directory
+2026-05-09T21:39:25 exception: No such directory
+2026-05-09T21:44:46 update: added g/Lovesick.mp3
+2026-05-09T21:44:46 update: added g/Magnolia.mp3
+2026-05-09T21:44:46 update: added g/Valentine.mp3
+2026-05-09T21:44:46 update: added g/Let You Break My Heart Again.mp3
+2026-05-09T21:44:46 update: added g/Goddess.mp3
+2026-05-09T21:44:46 update: added g/Bored.mp3
+2026-05-09T21:44:46 update: added g/Promise.mp3
+2026-05-09T21:44:46 update: added g/Laufey - Lover Girl (Official Lyric Video with Chords).mp3
+2026-05-09T21:44:46 update: added g/Silver Lining.mp3
+2026-05-09T21:44:46 update: added g/Everything I Know About Love.mp3
+2026-05-09T21:44:46 update: added g/Cupid (Twin Version).mp3
+2026-05-09T21:44:46 update: added g/Fragile.mp3
+2026-05-09T21:44:46 update: added g/Second Best.mp3
+2026-05-09T21:44:46 update: added g/Dreamer.mp3
+2026-05-09T21:44:46 update: added g/Snow White.mp3
+2026-05-09T21:44:46 update: added g/Haunted.mp3
+2026-05-09T21:44:46 update: added g/Must Be Love.mp3
+2026-05-09T21:44:46 update: added g/While You Were Sleeping.mp3
+2026-05-09T21:44:46 update: added g/California and Me.mp3
+2026-05-09T21:44:46 update: added g/Misty.mp3
+2026-05-09T21:44:46 update: added g/Serendipity.mp3
+2026-05-09T21:44:46 update: added g/Letter To My 13 Year Old Self.mp3
+2026-05-09T21:44:46 update: added g/Bewitched.mp3
+2026-05-09T21:44:46 update: added g/Beautiful Stranger.mp3
+2026-05-09T21:44:46 update: added g/Above The Chinese Restaurant.mp3
+2026-05-09T21:44:46 update: added g/Dear Soulmate.mp3
+2026-05-09T21:44:46 update: added g/What Love Will Do to You.mp3
+2026-05-09T21:44:46 update: added g/I've Never Been In Love Before.mp3
+2026-05-09T21:44:46 update: added g/Just Like Chet.mp3
+2026-05-09T21:44:46 update: added g/Hi.mp3
+2026-05-09T21:44:46 update: added g/Dance With You Tonight.mp3
+2026-05-09T21:44:46 update: added g/Night Light.mp3
+2026-05-09T21:44:46 update: added g/Street by Street.mp3
+2026-05-09T21:44:46 update: added g/Like the Movies.mp3
+2026-05-09T21:44:46 update: added g/I Wish You Love.mp3
+2026-05-09T21:44:46 update: added g/James.mp3
+2026-05-09T21:47:48 player: played "g/Portugal. The Man - Feel It Still (Official Music Video).mp3"
+2026-05-09T21:53:47 player: played "g/Falling Behind.mp3"
+2026-05-09T21:57:36 player: played "g/Mr. Brightside.mp3"
+2026-05-09T21:59:05 update: added g/Someone New.mp3
+2026-05-09T21:59:05 update: added g/Best Friend.mp3
+2026-05-09T21:59:05 update: added g/Clockwork.mp3
+2026-05-09T21:59:05 update: added g/Lover Girl.mp3
+2026-05-09T21:59:05 update: added g/Castle in Hollywood.mp3
+2026-05-09T21:59:05 update: added g/Carousel.mp3
+2026-05-09T21:59:05 update: added g/Too Little, Too Late.mp3
+2026-05-09T21:59:05 update: added g/Forget-Me-Not.mp3
+2026-05-09T21:59:05 update: added g/A Cautionary Tale.mp3
+2026-05-09T21:59:05 update: added g/Mr. Eclectic.mp3
+2026-05-09T21:59:05 update: added g/Clean Air.mp3
+2026-05-09T21:59:05 update: added g/Sabotage.mp3
+2026-05-09T21:59:05 update: added g/Toxic.mp3
+2026-05-09T21:59:05 update: added g/Poker Face.mp3
+2026-05-09T21:59:05 update: added g/Unwritten.mp3
+2026-05-09T21:59:05 update: added g/Hollaback Girl.mp3
+2026-05-09T21:59:05 update: added g/A Night To Remember.mp3
+2026-05-09T21:59:05 update: added g/The Risk.mp3
+2026-05-09T21:59:05 update: added g/TiK ToK.mp3
+2026-05-09T21:59:05 update: added g/Love Flew Away.mp3
+2026-05-09T21:59:05 update: added g/But Beautiful.mp3
+2026-05-09T21:59:05 update: added g/Lucky for Me.mp3
+2026-05-09T21:59:05 update: added g/It Could Happen To You.mp3
+2026-05-09T21:59:05 update: added g/Trouble.mp3
+2026-05-09T21:59:05 update: added g/Don't Stop Me Now (Remastered 2011).mp3
+2026-05-09T21:59:05 update: added g/... Baby One More Time.mp3
+2026-05-09T21:59:05 update: added g/Slow Down.mp3
+2026-05-09T21:59:05 update: added g/Questions For The Universe.mp3
+2026-05-09T21:59:05 update: added g/Seems Like Old Times (Bonus Track).mp3
+2026-05-09T21:59:05 update: added g/Where or When - Laufey Lyrics.mp3
+2026-05-09T21:59:05 update: added g/Everytime We Say Goodbye (Live at The Symphony).mp3
+2026-05-09T21:59:05 update: added g/More Than a Feeling.mp3
+2026-05-09T21:59:05 update: added g/Starman (2012 Remaster).mp3
+2026-05-09T21:59:05 update: added g/Christmas Kids.mp3
+2026-05-09T21:59:05 update: added g/Headlock.mp3
+2026-05-09T21:59:05 update: added g/The Answer.mp3
+2026-05-09T21:59:05 update: added g/The List.mp3
+2026-05-09T21:59:05 update: added g/Hot Mess.mp3
+2026-05-09T21:59:05 update: added g/the perfect pair.mp3
+2026-05-09T21:59:05 update: added g/Real Man.mp3
+2026-05-09T21:59:05 update: added g/Glue Song.mp3
+2026-05-09T21:59:05 update: added g/Sweet Dreams (Are Made of This).mp3
+2026-05-09T21:59:05 update: added g/Notion.mp3
+2026-05-09T21:59:05 update: added g/Hooked On A Feeling.mp3
+2026-05-09T21:59:05 update: added g/My Love Mine All Mine.mp3
+2026-05-09T21:59:05 update: added g/Firework.mp3
+2026-05-09T21:59:05 update: added g/Lonely Bones.mp3
+2026-05-09T21:59:05 update: added g/Beat It.mp3
+2026-05-09T21:59:08 update: added g/Take on Me.webm
+Warning: Xing stream size off by more than 1%, fuzzy seeking may be even more fuzzy than by design!
+2026-05-09T21:59:08 update: added g/Take on Me.mp3
+2026-05-09T21:59:12 update: updating g/Take on Me.mp3
+2026-05-09T21:59:12 update: removing g/Take on Me.webm
+2026-05-09T22:00:03 player: played "g/Mr. Blue Sky.mp3"
+2026-05-09T22:07:47 player: played "g/Where or When - Laufey Lyrics.mp3"
+2026-05-09T22:10:33 player: played "g/What Love Will Do to You.mp3"
+2026-05-09T22:14:56 player: played "g/Let You Break My Heart Again.mp3"
+2026-05-09T22:18:12 player: played "g/Beautiful Stranger.mp3"
+2026-05-09T22:22:53 player: played "g/More Than a Feeling.mp3"
+2026-05-09T22:27:15 player: played "g/Goddess.mp3"
+2026-05-09T22:30:06 player: played "g/James.mp3"
+2026-05-09T22:32:48 player: played "g/Like the Movies.mp3"
+2026-05-09T22:33:48 update: added g/Immigrant Song (Remaster).mp3
+2026-05-09T22:33:48 update: added g/Killer Queen (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/Rock With You.mp3
+2026-05-09T22:33:48 update: added g/Oops!...I Did It Again.mp3
+2026-05-09T22:33:48 update: added g/Thriller.mp3
+2026-05-09T22:33:48 update: added g/Washing Machine Heart.mp3
+2026-05-09T22:33:48 update: added g/Blame It on the Boogie.mp3
+2026-05-09T22:33:48 update: added g/Let's Dream in the Moonlight (Take 1).mp3
+2026-05-09T22:33:48 update: added g/Good Old-Fashioned Lover Boy (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/Seven Nation Army.mp3
+2026-05-09T22:33:48 update: added g/All I Wanted.mp3
+2026-05-09T22:33:48 update: added g/California Gurls.mp3
+2026-05-09T22:33:48 update: added g/Fast in My Car.mp3
+2026-05-09T22:33:48 update: added g/Stayin Alive.mp3
+2026-05-09T22:33:48 update: added g/Wir waren hier.mp3
+2026-05-09T22:33:48 update: added g/Under Pressure (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/Liquid Smooth.mp3
+2026-05-09T22:33:48 update: added g/Francis Forever.mp3
+2026-05-09T22:33:48 update: added g/Old Devil Moon.mp3
+2026-05-09T22:33:48 update: added g/Love to Keep Me Warm.mp3
+2026-05-09T22:33:48 update: added g/Petals on the Moon.mp3
+2026-05-09T22:33:48 update: added g/Dumb Feeling.mp3
+2026-05-09T22:33:48 update: added g/Brand New City.mp3
+2026-05-09T22:33:48 update: added g/Buffalo Replaced.mp3
+2026-05-09T22:33:48 update: added g/This Is How It Went.mp3
+2026-05-09T22:33:48 update: added g/Let It Happen.mp3
+2026-05-09T22:33:48 update: added g/The Nearness of You (Live at The Symphony).mp3
+2026-05-09T22:33:48 update: added g/No One Knows.mp3
+2026-05-09T22:33:48 update: added g/The Longest Goodbye.mp3
+2026-05-09T22:33:48 update: added g/Stay Soft.mp3
+2026-05-09T22:33:48 update: added g/Should've Been Me.mp3
+2026-05-09T22:33:48 update: added g/Valentine, Texas.mp3
+2026-05-09T22:33:48 update: added g/Working for the Knife.mp3
+2026-05-09T22:33:48 update: added g/Heat Lightning.mp3
+2026-05-09T22:33:48 update: added g/The Only Heartbreaker.mp3
+2026-05-09T22:33:48 update: added g/Love Me More.mp3
+2026-05-09T22:33:48 update: added g/Everyone.mp3
+2026-05-09T22:33:48 update: added g/There's Nothing Left for You.mp3
+2026-05-09T22:33:48 update: added g/I Guess.mp3
+2026-05-09T22:33:48 update: added g/That's Our Lamp.mp3
+2026-05-09T22:33:48 update: added g/Heaven.mp3
+2026-05-09T22:33:48 update: added g/I Don't Like My Mind.mp3
+2026-05-09T22:33:48 update: added g/Bohemian Rhapsody (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/Somebody To Love (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/We Will Rock You (Remastered 2011).mp3
+2026-05-09T22:33:48 update: added g/Feel Good Inc..mp3
+2026-05-09T22:33:48 update: added g/Pearl Diver.mp3
+2026-05-09T22:33:48 update: added g/Airbag.mp3
+2026-05-09T22:33:48 update: added g/Exit Music (For A Film).mp3
+2026-05-09T22:33:48 update: added g/Let Down.mp3
+2026-05-09T22:33:48 update: added g/Karma Police.mp3
+2026-05-09T22:33:48 update: added g/Electioneering.mp3
+2026-05-09T22:33:48 update: added g/Climbing Up the Walls.mp3
+2026-05-09T22:33:48 update: added g/No Surprises.mp3
+2026-05-09T22:33:48 update: added g/Lucky.mp3
+2026-05-09T22:33:48 update: added g/The Tourist.mp3
+2026-05-09T22:33:48 update: added g/The Less I Know The Better.mp3
+2026-05-09T22:33:48 update: added g/Dracula.mp3
+2026-05-09T22:33:48 update: added g/Borderline.mp3
+2026-05-09T22:33:48 update: added g/New Person, Same Old Mistakes.mp3
+2026-05-09T22:33:48 update: added g/It Is Not Meant To Be.mp3
+2026-05-09T22:33:48 update: added g/Paranoid Android.mp3
+2026-05-09T22:33:48 update: added g/First Love⧸Late Spring.mp3
+2026-05-09T22:33:48 update: added g/Can't Stop.mp3
+2026-05-09T22:33:48 update: added g/Care.mp3
+2026-05-09T22:33:48 update: added g/Worth It.mp3
+2026-05-09T22:33:48 update: added g/Dye It Red.mp3
+2026-05-09T22:33:48 update: added g/Back To Mars.mp3
+2026-05-09T22:33:48 update: added g/Charlie Brown.mp3
+2026-05-09T22:33:48 update: added g/Emo Song.mp3
+2026-05-09T22:33:48 update: added g/Sorry.mp3
+2026-05-09T22:33:48 update: added g/Further Away.mp3
+2026-05-09T22:33:48 update: added g/Horen Sarrison.mp3
+2026-05-09T22:33:48 update: added g/How Was Your Day？.mp3
+2026-05-09T22:33:48 update: added g/Together.mp3
+2026-05-09T22:33:48 update: added g/Yoshimi, Forest, Magdalene.mp3
+2026-05-09T22:33:48 update: added g/Upside Down.mp3
+2026-05-09T22:33:48 update: added g/Townie.mp3
+2026-05-09T22:33:48 update: added g/The Winner Takes It All.mp3
+2026-05-09T22:33:48 update: added g/Brain Stew.mp3
+2026-05-09T22:33:48 update: added g/Survivor.mp3
+2026-05-09T22:33:48 update: added g/Harness Your Hopes (B-side).mp3
+2026-05-09T22:33:48 update: added g/I Will Survive.mp3
+2026-05-09T22:33:48 update: added g/In a Lake.mp3
+2026-05-09T22:33:48 update: added g/Where's My Phone？.mp3
+2026-05-09T22:33:48 update: added g/Cats.mp3
+2026-05-09T22:33:48 update: added g/If I Leave.mp3
+2026-05-09T22:33:48 update: added g/Dead Women.mp3
+2026-05-09T22:33:48 update: added g/Instead of Here.mp3
+2026-05-09T22:33:48 update: added g/I'll Change for You.mp3
+2026-05-09T22:33:48 update: added g/Rules.mp3
+2026-05-09T22:33:48 update: added g/That White Cat.mp3
+2026-05-09T22:33:48 update: added g/Charon's Obol.mp3
+2026-05-09T22:33:48 update: added g/Lightning.mp3
+2026-05-09T22:33:48 update: added g/Say So.mp3
+2026-05-09T22:33:48 update: added g/Judas.mp3
+2026-05-09T22:33:48 update: added g/Please Please Please.mp3
+2026-05-09T22:33:48 update: added g/Stateside + Zara Larsson.mp3
+2026-05-09T22:33:48 update: added g/If I Get High.mp3
+2026-05-09T22:33:48 update: added g/I Bet on Losing Dogs.mp3
+2026-05-09T22:33:48 update: added g/All I Did Was Dream of You.mp3
+2026-05-09T22:33:48 update: added g/Beaches.mp3
+2026-05-09T22:33:48 update: added g/I'll Forget About You (In Time).mp3
+2026-05-09T22:33:48 update: added g/I Wait, I Wait, I Wait.mp3
+2026-05-09T22:33:48 update: added g/How I Get.mp3
+2026-05-09T22:33:48 update: added g/Madwoman.mp3
+2026-05-09T22:33:48 update: added g/Nobody.mp3
+2026-05-09T22:33:48 update: added g/Don't Stop The Music.mp3
+2026-05-09T22:33:48 update: added g/Tears.mp3
+2026-05-09T22:33:48 update: added g/Feather.mp3
+2026-05-09T22:33:48 update: added g/Man of War.mp3
+2026-05-09T22:34:09 player: played "g/Magnolia.mp3"
+2026-05-09T22:34:09 exception: No such playlist
+2026-05-09T22:38:10 exception: No such playlist
+2026-05-09T22:40:25 exception: No such playlist
+2026-05-09T22:50:05 player: played "g/Laufey - Lover Girl (Official Lyric Video with Chords).mp3"
+2026-05-09T22:50:05 exception: No such playlist
+2026-05-09T22:50:47 exception: No such playlist
+2026-05-09T22:53:12 update: added g/g/Mr. Brightside.mp3
+2026-05-09T22:53:12 update: added g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3
+2026-05-09T22:54:24 player: played "g/Night Light.mp3"
+2026-05-09T22:58:06 player: played "g/Feel Good Inc..mp3"
+2026-05-09T22:59:43 player: played "g/Just Like Chet.mp3"
+2026-05-09T23:00:04 player: played "g/Fast in My Car.mp3"
+2026-05-10T07:17:05 player: played "g/Falling Behind.mp3"
+2026-05-10T07:28:22 update: added g/Lift.mp3
+2026-05-10T07:28:22 update: added g/Lull (Remastered).mp3
+2026-05-10T07:28:22 update: added g/Meeting in the Aisle (Remastered).mp3
+2026-05-10T07:28:22 update: added g/Melatonin (Remastered).mp3
+2026-05-10T07:28:22 update: added g/Polyethylene (Parts 1 & 2).mp3
+2026-05-10T07:28:22 update: added g/Pearly＊ (Remastered).mp3
+2026-05-10T07:28:22 update: added g/Palo Alto (Remastered).mp3
+2026-05-10T07:28:22 update: added g/How I Made My Millions (Remastered).mp3
+2026-05-10T07:28:22 update: removing g/g/Mr. Brightside.mp3
+2026-05-10T07:28:22 update: removing g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3
+2026-05-10T07:32:34 player: played "g/7 rings.mp3"
+2026-05-10T07:32:34 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:32:34 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:54:39 player: played "g/Magnolia.mp3"
+2026-05-10T07:54:39 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:54:39 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:55:51 player: played "g/Nobody.mp3"
+2026-05-10T07:55:51 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:55:51 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:57:03 player: played "g/Misty.mp3"
+2026-05-10T07:57:03 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:57:03 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:57:33 player: played "g/Silver Lining.mp3"
+2026-05-10T07:57:33 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:57:33 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:57:41 exception: No such directory
+2026-05-10T07:58:15 player: played "g/More Than a Feeling.mp3"
+2026-05-10T07:58:15 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:58:15 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T07:58:23 exception: No such directory
+2026-05-10T07:59:08 player: played "g/How I Get.mp3"
+2026-05-10T07:59:08 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T07:59:08 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:29:03 player: played "g/Man of War.mp3"
+2026-05-10T14:29:03 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:29:03 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:32:26 player: played "g/Castle in Hollywood.mp3"
+2026-05-10T14:32:26 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:32:26 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:32:42 player: played "g/Love Flew Away.mp3"
+2026-05-10T14:32:42 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:32:42 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:33:39 player: played "g/Heaven.mp3"
+2026-05-10T14:33:39 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:33:39 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:34:23 player: played "g/Bohemian Rhapsody (Remastered 2011).mp3"
+2026-05-10T14:34:23 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:34:23 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:35:37 player: played "g/All I Wanted.mp3"
+2026-05-10T14:35:37 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:35:37 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:38:14 player: played "g/First Love⧸Late Spring.mp3"
+2026-05-10T14:38:14 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:38:14 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:38:31 player: played "g/Last Friday Night (T.G.I.F.).mp3"
+2026-05-10T14:38:31 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:38:31 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:40:16 player: played "g/Don't Stop The Music.mp3"
+2026-05-10T14:40:16 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:40:16 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:45:23 player: played "g/Night Light.mp3"
+2026-05-10T14:45:23 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T14:45:23 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T14:49:52 player: played "g/Man of War.mp3"
+2026-05-10T14:53:06 player: played "g/Carousel.mp3"
+2026-05-10T14:55:35 player: played "g/Francis Forever.mp3"
+2026-05-10T15:00:13 player: played "g/Castle in Hollywood.mp3"
+2026-05-10T15:03:00 player: played "g/Hooked On A Feeling.mp3"
+2026-05-10T15:05:46 player: played "g/What Love Will Do to You.mp3"
+2026-05-10T15:09:59 player: played "g/Beat It.mp3"
+2026-05-10T15:13:10 player: played "g/Should've Been Me.mp3"
+2026-05-10T15:16:23 player: played "g/Killer Queen (Remastered 2011).mp3"
+2026-05-10T15:19:08 player: played "g/I Bet on Losing Dogs.mp3"
+2026-05-10T15:22:46 player: played "g/Street by Street.mp3"
+2026-05-10T15:26:49 player: played "g/Under Pressure (Remastered 2011).mp3"
+2026-05-10T15:30:03 player: played "g/Notion.mp3"
+2026-05-10T15:33:57 player: played "g/Madwoman.mp3"
+2026-05-10T15:37:12 player: played "g/Haunted.mp3"
+2026-05-10T15:41:16 player: played "g/Judas.mp3"
+2026-05-10T15:48:07 player: played "g/Wir waren hier.mp3"
+2026-05-10T15:51:44 player: played "g/Above The Chinese Restaurant.mp3"
+2026-05-10T15:54:49 player: played "g/Dye It Red.mp3"
+2026-05-10T15:58:50 player: played "g/Silver Lining.mp3"
+2026-05-10T16:13:25 player: played "g/The Nearness of You (Live at The Symphony).mp3"
+2026-05-10T16:16:44 player: played "g/Yoshimi, Forest, Magdalene.mp3"
+2026-05-10T16:19:22 player: played "g/Lover Girl.mp3"
+2026-05-10T16:25:17 player: played "g/Mr. Eclectic.mp3"
+2026-05-10T16:25:17 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T16:25:17 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T16:25:45 player: played "g/Dracula.mp3"
+2026-05-10T16:25:45 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T16:25:45 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T16:28:01 player: played "g/Washing Machine Heart.mp3"
+2026-05-10T16:30:21 player: played "g/Lovesick.mp3"
+2026-05-10T16:32:37 player: played "g/A Night To Remember.mp3"
+2026-05-10T16:32:55 player: played "g/Horen Sarrison.mp3"
+2026-05-10T16:39:24 player: played "g/Horen Sarrison.mp3"
+2026-05-10T16:39:29 player: played "g/Horen Sarrison.mp3"
+2026-05-10T16:39:46 player: played "g/Horen Sarrison.mp3"
+2026-05-10T16:39:46 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T16:39:46 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T16:42:51 player: played "g/A Night To Remember.mp3"
+2026-05-10T16:43:22 player: played "g/A Night To Remember.mp3"
+2026-05-10T16:44:04 player: played "g/A Night To Remember.mp3"
+2026-05-10T16:44:23 player: played "g/A Night To Remember.mp3"
+2026-05-10T16:47:27 player: played "g/Please Please Please.mp3"
+2026-05-10T16:47:27 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T16:47:27 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T16:50:39 player: played "g/Tough Luck.mp3"
+2026-05-10T16:54:59 player: played "g/Dear Soulmate.mp3"
+2026-05-10T16:58:08 player: played "g/Dead Women.mp3"
+2026-05-10T17:01:13 player: played "g/Stateside + Zara Larsson.mp3"
+2026-05-10T18:29:18 player: played "g/All I Did Was Dream of You.mp3"
+2026-05-10T18:30:53 player: played "g/Pearl Diver.mp3"
+2026-05-10T18:30:53 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T18:30:53 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T18:42:38 player: played "g/Immigrant Song (Remaster).mp3"
+2026-05-10T18:42:38 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T18:42:38 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T19:01:51 player: played "g/Christmas Kids.mp3"
+2026-05-10T19:01:51 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T19:01:51 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-10T20:11:01 player: played "g/If I Leave.mp3"
+2026-05-10T20:11:01 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-10T20:11:01 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-11T07:50:41 player: played "g/Further Away.mp3"
+2026-05-11T07:50:41 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-11T07:50:41 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-11T07:53:39 player: played "g/Seems Like Old Times (Bonus Track).mp3"
+2026-05-11T07:55:10 player: played "g/Back To Mars.mp3"
+2026-05-11T07:57:22 player: played "g/Brand New City.mp3"
+2026-05-11T09:03:51 player: played "g/Love Me More.mp3"
+2026-05-11T09:03:51 playlist: Failed to load "g/g/Portugal. The Man - Feel It Still (Official Music Video).mp3".
+2026-05-11T09:03:51 playlist: Failed to load "g/g/Mr. Brightside.mp3".
+2026-05-11T09:09:31 player: played "g/Heaven.mp3"
+2026-05-11T09:14:56 player: played "g/The Tourist.mp3"
+2026-05-11T09:19:05 player: played "g/The Risk.mp3"
+2026-05-11T09:23:05 player: played "g/Slow Down.mp3"
+2026-05-11T09:27:13 player: played "g/Judas.mp3"
+2026-05-11T09:30:55 player: played "g/Mr. Brightside.mp3"
+2026-05-11T09:34:10 player: played "g/Snow White.mp3"
+2026-05-11T09:37:25 player: played "g/Notion.mp3"
+2026-05-11T09:40:04 player: played "g/Buffalo Replaced.mp3"
+2026-05-11T09:42:56 player: played "g/Heat Lightning.mp3"
+2026-05-11T09:46:25 player: played "g/Everything I Know About Love.mp3"
+2026-05-11T09:50:31 player: played "g/Charon's Obol.mp3"
+2026-05-11T09:53:28 player: played "g/the perfect pair.mp3"
+2026-05-11T09:57:44 player: played "g/A Cautionary Tale.mp3"
+2026-05-11T10:00:18 player: played "g/Clean Air.mp3"
+2026-05-11T10:03:49 player: played "g/... Baby One More Time.mp3"
+2026-05-11T10:08:17 player: played "g/Let You Break My Heart Again.mp3"
+2026-05-11T10:11:01 player: played "g/Best Friend.mp3"

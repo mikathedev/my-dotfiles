@@ -1,0 +1,95 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+// ============================================
+// rmpc theme — Catppuccin Mocha
+// Place at: ~/.config/rmpc/themes/catppuccin-mocha.ron
+// ============================================
+(
+    // Background colors
+    background_color: "#1e1e2e",
+    header_background_color: "#181825",
+    modal_background_color: "#181825",
+    modal_backdrop: true,
+
+    // Text
+    text_color: "#cdd6f4",
+    format_tag_separator: " | ",
+    show_song_table_header: true,
+    draw_borders: true,
+
+    // Tab bar
+    tab_bar: (
+        active_style: (fg: "#1e1e2e", bg: "#cba6f7", modifiers: "Bold"),
+        inactive_style: (fg: "#6c7086", bg: "#181825"),
+    ),
+
+    // Selected / highlighted item
+    highlighted_item_style: (fg: "#cba6f7", bg: "#313244", modifiers: "Bold"),
+
+    // Currently playing item
+    current_item_style: (fg: "#a6e3a1", bg: "#313244", modifiers: "Bold"),
+
+    // Preview pane labels
+    preview_label_style: (fg: "#b4befe", modifiers: "Bold"),
+    preview_metadata_group_style: (fg: "#cba6f7", modifiers: "Bold"),
+
+    // Borders
+    borders_style: (fg: "#313244"),
+    focused_border_style: (fg: "#cba6f7"),
+
+    // Header / status bar items
+    header: (
+        rows: [
+            (
+                left: [
+                    (kind: Property(Song(Title)), style: (fg: "#cdd6f4", modifiers: "Bold")),
+                ],
+                center: [
+                    (kind: Property(Status(StateV2(
+                        playing_label: " Playing",
+                        paused_label: " Paused",
+                        stopped_label: " Stopped",
+                    ))), style: (fg: "#cba6f7", modifiers: "Bold")),
+                ],
+                right: [
+                    (kind: Property(Song(Artist)), style: (fg: "#89b4fa")),
+                ],
+            ),
+            (
+                left: [
+                    (kind: Property(Song(Album)), style: (fg: "#74c7ec")),
+                ],
+                center: [
+                    (kind: Property(Status(Elapsed)), style: (fg: "#a6e3a1")),
+                    (kind: Text(" / "), style: (fg: "#6c7086")),
+                    (kind: Property(Status(Duration)), style: (fg: "#a6e3a1")),
+                ],
+                right: [
+                    (kind: Property(Status(Volume)), style: (fg: "#f5c2e7")),
+                    (kind: Text(" "), style: ()),
+                    (kind: Property(Status(Bitrate)), style: (fg: "#6c7086")),
+                ],
+            ),
+        ],
+    ),
+
+    // Progress bar
+    progressbar: (
+        symbols: ["─", "─"],
+        track_style: (fg: "#313244"),
+        elapsed_style: (fg: "#cba6f7"),
+        thumb_style: (fg: "#cba6f7"),
+    ),
+
+    // Scrollbar
+    scrollbar: (
+        symbols: ["│", "█", "▲", "▼"],
+        track_style: (fg: "#313244"),
+        ends_style: (fg: "#45475a"),
+        thumb_style: (fg: "#585b70"),
+    ),
+
+    // Browser column widths
+    browser_column_widths: [20, 38, 42],
+)

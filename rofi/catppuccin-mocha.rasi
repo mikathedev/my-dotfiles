@@ -1,0 +1,112 @@
+/* ============================================
+   Rofi — Catppuccin Mocha Theme
+   Place at: ~/.config/rofi/catppuccin-mocha.rasi
+   ============================================ */
+
+* {
+    bg:         #1e1e2e;
+    mantle:     #181825;
+    surface0:   #313244;
+    surface1:   #45475a;
+    overlay0:   #6c7086;
+    text:       #cdd6f4;
+    subtext1:   #bac2de;
+    mauve:      #cba6f7;
+    blue:       #89b4fa;
+    lavender:   #b4befe;
+
+    font:                   "JetBrainsMono Nerd Font 13";
+    background-color:       transparent;
+    text-color:             @text;
+    border:                 0;
+    margin:                 0;
+    padding:                0;
+    spacing:                0;
+}
+
+/* Main window */
+window {
+    background-color:   @bg;
+    border-radius:      16px;
+    width:              500px;
+    padding:            12px;
+}
+
+/* Main layout box */
+mainbox {
+    background-color:   transparent;
+    spacing:            8px;
+}
+
+/* Search entry */
+inputbar {
+    background-color:   @mantle;
+    border-radius:      999px;
+    padding:            8px 16px;
+    spacing:            8px;
+    children:           [ prompt, entry ];
+}
+
+
+prompt {
+    background-color:   transparent;
+    text-color:         @mauve;
+    font:               "JetBrainsMono Nerd Font 13";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @text;
+    placeholder:        "Search...";
+    placeholder-color:  @overlay0;
+    cursor:             text;
+}
+
+/* Results list */
+listview {
+    background-color:   transparent;
+    spacing:            4px;
+    lines:              8;
+    scrollbar:          false;
+}
+
+/* Individual result */
+element {
+    background-color:   transparent;
+    border-radius:      10px;
+    padding:            7px 10px;
+    spacing:            10px;
+    orientation:        horizontal;
+}
+
+
+element selected {
+    background-color:   @surface0;
+}
+
+element-icon {
+    size:               28px;
+    vertical-align:     0.5;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         @text;
+    vertical-align:     0.5;
+}
+
+element-text selected {
+    text-color:         @text;
+}
+
+/* Message box */
+message {
+    background-color:   @surface0;
+    border-radius:      8px;
+    padding:            6px 12px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         @subtext1;
+}

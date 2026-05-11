@@ -1,0 +1,101 @@
+/* ============================================
+   Catppuccin Mocha — Floating Pill Style
+   ============================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    min-height: 36px;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: #1e1e2e;
+    border-radius: 999px;
+    padding: 0 15px;
+    margin: 8px 4px;
+    border: 1px solid #313244;
+}
+
+#workspaces,
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    color: #cdd6f4;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: #6c7086;
+    background: transparent;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+    background: #313244;
+}
+
+#workspaces button:hover {
+    color: #cdd6f4;
+    background: #45475a;
+}
+
+#clock {
+    color: #b4befe;
+    font-weight: bold;
+}
+
+/* CHANGED — bigger icon */
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.warning { color: #f9e2af; }
+#battery.critical { color: #f38ba8; }
+
+#cpu { color: #89dceb; }
+#memory { color: #94e2d5; }
+#network { color: #89b4fa; }
+#network.disconnected { color: #f38ba8; }
+#pulseaudio { color: #f5c2e7; }
+#pulseaudio.muted { color: #6c7086; }
+#tray { color: #cdd6f4; }
+
+/* CHANGED — bigger icon, muted theme color */
+#custom-power {
+    font-size: 22px;
+    padding: 0 12px;
+    color: #585b70; /* surface2 — blends into pill subtly */
+    transition: color 0.2s ease;
+}
+
+#custom-power:hover {
+    color: #f38ba8; /* red on hover so it's still obvious */
+}
+
+/* CHANGED — more padding, bigger, blended color */
+#custom-bluetooth {
+    font-size: 18px;
+    padding: 0 16px;  /* more padding than default 10px */
+    color: #585b70;   /* same muted surface2 tone as power */
+    transition: color 0.2s ease;
+}
+
+#custom-bluetooth:hover {
+    color: #89b4fa; /* blue on hover — fitting for bluetooth */
+}
