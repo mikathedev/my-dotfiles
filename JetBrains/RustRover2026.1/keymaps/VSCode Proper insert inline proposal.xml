@@ -1,0 +1,5 @@
+<keymap version="1" name="VSCode Proper insert inline proposal" parent="VSCode">
+  <action id="InsertInlineCompletionAction">
+    <keyboard-shortcut first-keystroke="enter" />
+  </action>
+</keymap>

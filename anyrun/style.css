@@ -1,0 +1,75 @@
+/* ============================================
+   Anyrun — Catppuccin Mocha Theme
+   Place at: ~/.config/anyrun/style.css
+   ============================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    color: #cdd6f4;
+    border: none;
+    outline: none;
+}
+
+window {
+    background: transparent;
+}
+
+/* Use '.main' as a class, not an ID */
+.main {
+    background: #1e1e2e;
+    border: 1px solid #313244;
+    border-radius: 16px;
+    padding: 12px;
+    /* Explicitly set width here */
+    width: 480px;
+}
+
+/* Ensure the search box doesn't expand the window */
+.entry {
+    background: #181825;
+    color: #cdd6f4;
+    border-radius: 20px;
+    padding: 1px 10px;
+}
+
+.entry:focus {
+    border-color: #cba6f7;
+}
+
+
+/* Individual result row */
+.match {
+    background: transparent;
+    border-radius: 20px;
+    padding: 6px 10px;s
+    transition: background 0.15s ease;
+}
+
+.match:hover {
+    background: #313244;
+}
+
+/* Selected result — mauve left accent */
+.match:selected {
+    background: #313244;
+}
+
+/* Result icon */
+.icon {
+    min-width: 28px;
+    min-height: 28px;
+    margin-right: 10px;
+}
+
+/* Result name */
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #cdd6f4;
+}
+
+/* Result description */
+.info {
+    font-size: 12px;
+    color: #bac2de;
+}

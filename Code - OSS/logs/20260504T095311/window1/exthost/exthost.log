@@ -1,0 +1,22 @@
+2026-05-04 09:53:13.935 [info] Extension host with pid 1670419 started
+2026-05-04 09:53:13.935 [info] Skipping acquiring lock for /home/mika/.config/Code - OSS/User/workspaceStorage/41379c053bfd018806a187ca80fa9c56.
+2026-05-04 09:53:13.981 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-05-04 09:53:14.018 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-05-04 09:53:14.044 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatParticipant:github.copilot.editsAgent'
+2026-05-04 09:53:15.809 [info] Extension host terminating: received terminate message from renderer
+2026-05-04 09:53:15.814 [error] ProxyResolver#resolveProxy undefined Canceled: Canceled
+	at Ys (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:383:1546)
+	at file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:407:105864
+	at Array.forEach (<anonymous>)
+	at i.dispose (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:407:105772)
+	at yP.terminate (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:505:12324)
+	at i.terminate (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:507:1072)
+	at js (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:831:11700)
+	at ap.value (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:831:9847)
+	at E._deliver (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:403:3126)
+	at E.fire (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:403:3444)
+	at as.fire (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:405:8437)
+	at MessagePortMain.<anonymous> (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:831:8082)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2959) 
+2026-05-04 09:53:15.814 [info] Extension host with pid 1670419 exiting with code 0

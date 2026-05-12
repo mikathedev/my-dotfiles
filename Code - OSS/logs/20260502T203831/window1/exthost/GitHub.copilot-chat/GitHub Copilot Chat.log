@@ -1,0 +1,58 @@
+2026-05-02 20:38:36.353 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-05-02 20:38:36.353 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-05-02 20:38:36.353 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-05-02 20:38:36.353 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-05-02 20:38:36.353 [info] ConversationFeature: Waiting for copilot token to activate conversation feature
+2026-05-02 20:38:36.353 [error] [CopilotCLISession] Failed to load @github/copilot/sdk: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] [CopilotCLISession] Failed to load @github/copilot/sdk: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] [CopilotCLISession] Failed to load @github/copilot/sdk: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] [CopilotCLISDK] Failed to initialize logger: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] Failed to initialize Copilot CLI Session Manager: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] [CopilotCLIModels] Failed to fetch available models: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.353 [info] [CopilotCLI] MCP server started. Lock file: /home/mika/.local/state/.copilot/ide/5ae370a7-3012-4cfe-852b-af77f01c76bd.lock
+2026-05-02 20:38:36.353 [info] [CopilotCLI] Server URI: unix:/tmp/mcp-QsgfFG/mcp.sock#%2Fmcp
+2026-05-02 20:38:36.355 [info] Logged in as mikathedev
+2026-05-02 20:38:36.365 [info] Using the Electron fetcher.
+2026-05-02 20:38:36.555 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:36.929 [info] Got Copilot token for mikathedev
+2026-05-02 20:38:36.929 [info] Copilot Chat: 0.45.0, VS Code: 1.117.0
+2026-05-02 20:38:36.942 [info] [context keys] Setting context key: github.copilot-chat.activated
+2026-05-02 20:38:36.943 [info] activationBlocker from 'languageModelAccess' took for 932ms
+2026-05-02 20:38:37.018 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-05-02 20:38:37.018 [info] copilot token sku: free_limited_copilot
+2026-05-02 20:38:37.018 [info] ConversationFeature: Activating contributions
+2026-05-02 20:38:37.018 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2026-05-02 20:38:37.039 [info] Registering default platform agent...
+2026-05-02 20:38:37.040 [info] ConversationFeature: onDidAuthenticationChange has token: true
+2026-05-02 20:38:37.040 [info] [code-referencing] Public code references are enabled.
+2026-05-02 20:38:37.040 [info] activationBlocker from 'conversationFeature' took for 1042ms
+2026-05-02 20:38:37.046 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-05-02 20:38:37.048 [info] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-05-02 20:38:37.068 [error] [CopilotCLISession] Failed to load @github/copilot/sdk: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:37.069 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:37.070 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:37.070 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:37.071 [error] Failed to get all sessions: Error: Cannot find module '/usr/lib/code/extensions/copilot/node_modules/@github/copilot/sdk/index.js' imported from /usr/lib/code/extensions/copilot/dist/extension.js
+2026-05-02 20:38:37.343 [info] Fetched model metadata in 1312ms 6a698248-c392-404b-aff6-fb8d44a899da
+2026-05-02 20:38:37.400 [info] Latest entry: ccreq:latest.copilotmd
+2026-05-02 20:38:37.401 [info] ccreq:04f6fba4.copilotmd | markdown
+2026-05-02 20:38:37.416 [info] BYOK: Copilot Chat known models list fetched successfully.
+2026-05-02 20:38:37.751 [info] ccreq:1f4efe1f.copilotmd | markdown
+2026-05-02 20:38:37.828 [info] ccreq:d2c0d01c.copilotmd | markdown
+2026-05-02 20:38:38.365 [info] [fetchCompletions] Request e969bf3a-2d12-491f-bd34-dacf05ecfc44 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 562.6734990000004ms
+2026-05-02 20:38:38.370 [info] ccreq:5263841e.copilotmd | markdown
+2026-05-02 20:38:40.698 [info] message 0 returned. finish reason: [stop]
+2026-05-02 20:38:40.699 [info] request done: requestId: [3fce1d7d-b21b-4c47-8536-41c52fca0e02] model deployment ID: []
+2026-05-02 20:38:41.068 [info] ccreq:2cb86650.copilotmd | success | nes-callisto | 1129ms | [XtabProvider]
+2026-05-02 20:38:41.755 [info] ccreq:9abf58a6.copilotmd | markdown
+2026-05-02 20:38:41.778 [info] ccreq:d1e15722.copilotmd | markdown
+2026-05-02 20:38:42.235 [info] [fetchCompletions] Request be2dd9f9-88b4-47bf-8a9e-6ec9ca514102 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 470.363969ms
+2026-05-02 20:38:42.301 [info] ccreq:734019fe.copilotmd | markdown
+2026-05-02 20:38:44.066 [info] ccreq:15dee679.copilotmd | markdown
+2026-05-02 20:38:44.077 [info] ccreq:d6b0257c.copilotmd | markdown
+2026-05-02 20:38:44.372 [info] message 0 returned. finish reason: [stop]
+2026-05-02 20:38:44.373 [info] request done: requestId: [0f113b41-fd09-435c-a9aa-23da0548bb39] model deployment ID: []
+2026-05-02 20:38:44.378 [info] ccreq:e51cdfe8.copilotmd | success | nes-callisto-003 | 502ms | [XtabProvider]
+2026-05-02 20:38:44.480 [info] [fetchCompletions] Request e26a4d63-e646-46ef-b71e-fbd23d9f02e7 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 405.84698500000013ms
+2026-05-02 20:38:44.489 [info] ccreq:dfc99a7f.copilotmd | markdown

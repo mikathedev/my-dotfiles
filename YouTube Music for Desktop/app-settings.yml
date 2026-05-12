@@ -1,0 +1,40 @@
+api:
+  enabled: true
+  port: 13091
+app:
+  beta: false
+  autoupdate: true
+  autostart: true
+  autostartMinimized: true
+  getstarted: true
+  enableDev: false
+  minimizeTrayOverride: false
+  enableStatisticsAndErrorTracing: true
+  disableHardwareAccel: false
+  enableTaskbarProgress: false
+volumeRatio:
+  enabled: true
+  volume: 0.1
+player:
+  skipDisliked: false
+  res:
+    enabled: false
+    prefer: auto
+discord:
+  enabled: true
+  buttons: false
+customcss:
+  enabled: true
+  scssFile: /home/mika/Documents/ytmdesktop/custom.scss
+  watching: false
+  thumbnailBackground: false
+state:
+  currentUrl: null
+lastfm:
+  enabled: true
+  name: mikakimTheGoat
+__internal__:
+  migrationVersion: 4
+plugins:
+  bypass_age_restrictions:
+    enabled: true

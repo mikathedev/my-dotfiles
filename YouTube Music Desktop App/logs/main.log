@@ -1,0 +1,44 @@
+[2026-05-09 20:08:10.333][main][info] Application launched
+[2026-05-09 20:08:10.374][main][info] Application set as default protcol client for 'ytmd'
+[2026-05-09 20:08:10.391][main][info] Created memory store
+[2026-05-09 20:08:10.407][main][info] Performing store migration from 0.0.0 to >=2.0.0
+[2026-05-09 20:08:10.410][main][info] Performing store migration from >=2.0.0 to >=2.0.1
+[2026-05-09 20:08:10.412][main][info] Performing store migration from >=2.0.1 to >=2.0.7
+[2026-05-09 20:08:10.414][main][info] Created electron store
+[2026-05-09 20:08:12.226][main][info] Application ready
+[2026-05-09 20:08:12.236][main][info] Setup IPC handlers
+[2026-05-09 20:08:12.238][main][info] Setup permission handlers
+[2026-05-09 20:08:12.238][main][info] Unregistered shortcuts
+[2026-05-09 20:08:12.239][main][info] Registered shortcuts
+[2026-05-09 20:08:12.244][main][info] Created tray icon
+[2026-05-09 20:08:12.282][main][info] Created main window
+[2026-05-09 20:08:12.288][main][info] Created YTM view
+[2026-05-09 20:08:12.288][main][info] Setup taskbar features
+[2026-05-09 20:08:12.288][main][info] Integration update: Zoom Factor
+[2026-05-09 20:08:12.289][main][info] Starting enabled integrations
+[2026-05-09 20:08:16.403][main][warn] (electron) 'console-message' arguments are deprecated and will be removed. Please use Event<WebContentsConsoleMessageEventParams> object instead.
+[2026-05-09 20:08:16.404][renderer][info] LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.
+[2026-05-09 20:11:15.590][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:11:15.591][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:11:15.592][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:12:50.917][renderer][info] LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.
+[2026-05-09 20:12:51.448][main][error] Electron event WebContents#did-fail-load observed {
+  errorCode: -3,
+  errorDescription: '',
+  validatedURL: 'https://www.youtube.com/signin_prompt?app=desktop&next=https%3A%2F%2Fmusic.youtube.com%2F',
+  isMainFrame: true,
+  frameProcessId: 14,
+  frameRoutingId: 4
+}
+[2026-05-09 20:12:52.588][renderer][info] LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.
+[2026-05-09 20:12:56.364][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:12:56.365][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:12:56.366][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:12:56.862][renderer][info] LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.
+[2026-05-09 20:13:18.038][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:13:18.040][renderer][error] requestStorageAccessFor: Permission denied.
+[2026-05-09 20:13:18.041][renderer][error] requestStorageAccessFor: Permission denied.

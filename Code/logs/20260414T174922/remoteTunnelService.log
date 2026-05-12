@@ -1,0 +1,2 @@
+2026-04-14 17:49:25.547 [error] status error(undefined): + Error: spawn /usr/bin/code-tunnel ENOENT 
+2026-04-14 17:49:25.547 [error] undefined

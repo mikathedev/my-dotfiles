@@ -1,0 +1,24 @@
+.giving-back-sec {
+    height: 40vh;
+}
+
+.giving-back-sec img {
+    height: 300px; 
+    width: 400px;
+}
+
+.giving-back-sec .imgadiv {
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+.giving-back-sec .text {
+    padding: 4rem;
+    justify-content: flex-start;
+}
+
+.giving-back-sec .text h2 {
+    margin-top: 3rem;
+    margin-bottom: auto;
+    font-size: 2rem;
+}

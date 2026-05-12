@@ -1,0 +1,16 @@
+2026-04-14 17:49:53.939 [info] Extension host with pid 59221 started
+2026-04-14 17:49:53.939 [info] Skipping acquiring lock for /home/mika/.config/Code/User/workspaceStorage/6b46d7686625558c8fecef3587e35128.
+2026-04-14 17:49:54.113 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-04-14 17:49:54.165 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-04-14 17:49:54.246 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-04-14 17:49:54.249 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2026-04-14 17:49:54.302 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-04-14 17:49:54.361 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-04-14 17:49:54.548 [info] Eager extensions activated
+2026-04-14 17:49:54.598 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-04-14 17:49:54.600 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-04-14 17:49:59.353 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-04-14 17:49:59.361 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-04-14 17:49:59.385 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2026-04-14 17:50:07.898 [info] Extension host terminating: received terminate message from renderer
+2026-04-14 17:50:07.924 [info] Extension host with pid 59221 exiting with code 0

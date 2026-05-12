@@ -1,0 +1,74 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/RustroverProjects/untitled">
+          <value>
+            <RecentProjectMetaInfo frameTitle="untitled – main.rs" projectWorkspaceId="3CNNUHtSfW8HTlF8EZ71CRpRd7n">
+              <option name="activationTimestamp" value="1776342307959" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="RR-261.22158.331" />
+              <option name="buildTimestamp" value="1774760640000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="6" />
+              </option>
+              <frame x="260" y="40" width="1908" height="1032" extendedState="6" />
+              <option name="productionCode" value="RR" />
+              <option name="projectOpenTimestamp" value="1776222082690" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/RustroverProjects/pirate-app-tauri">
+          <value>
+            <RecentProjectMetaInfo frameTitle="pirate-app-tauri – lib.rs" projectWorkspaceId="3CRJCjCcYWhb4geQCurKhNJG1AF">
+              <option name="activationTimestamp" value="1777896036844" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="RR-261.22158.331" />
+              <option name="buildTimestamp" value="1774760640000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="7" />
+              </option>
+              <frame x="260" y="40" width="1908" height="1032" extendedState="6" />
+              <option name="productionCode" value="RR" />
+              <option name="projectOpenTimestamp" value="1776342323347" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/RustroverProjects/ClipboardWriter">
+          <value>
+            <RecentProjectMetaInfo frameTitle="ClipboardWriter – main.rs" projectWorkspaceId="3DLzUZuPvgO3Mw6tUmvtXxy8tcz">
+              <option name="activationTimestamp" value="1778287629432" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="RR-261.22158.331" />
+              <option name="buildTimestamp" value="1774760640000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="0" />
+              </option>
+              <frame x="260" y="40" width="1205" height="1032" extendedState="6" />
+              <option name="productionCode" value="RR" />
+              <option name="projectOpenTimestamp" value="1778287632871" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/RustroverProjects/Clipboard-Manager">
+          <value>
+            <RecentProjectMetaInfo frameTitle="Clipboard-Manager – main.rs" opened="true" projectWorkspaceId="3DG6QBIaknaER6c6r3CgXt0d71A">
+              <option name="activationTimestamp" value="1778290152450" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="RR-261.22158.331" />
+              <option name="buildTimestamp" value="1774760640000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="8" />
+              </option>
+              <frame x="260" y="40" width="948" height="510" extendedState="6" />
+              <option name="productionCode" value="RR" />
+              <option name="projectOpenTimestamp" value="1778287644233" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/RustroverProjects/Clipboard-Manager" />
+    <option name="lastProjectLocation" value="$USER_HOME$/RustroverProjects" />
+  </component>
+</application>

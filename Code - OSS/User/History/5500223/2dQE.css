@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+    --accent-orange: #ff4c00;
+    --card-bg: rgba(20, 20, 20, 0.8);
+}
+
+.horizontal-flex {
+    
+}
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #333333;
+}
+
+header {
+    color: white;
+    padding: 8rem;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)), url(https://images.food52.com/rfYywP_w7gx-1Ju_JmKlu3eItrE=/dd11b554-9c0f-4c61-96c9-15db7ef731b3--2015-0707_simple-sicilian-style-grilled-steak_bobbi-lin_4409.jpg);
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 7rem;
+    margin: 0px;
+}
+
+h3 {
+
+    font-size: 3rem;
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+.header_accent {
+    width: 80%;
+    max-width: 60rem;
+    align-self: center;
+    height: 0.2rem;
+    background-color: #ff4c00;
+    margin: 1rem auto;
+    border: none;
+    margin-top: -0.5rem;
+}
+
+.nav-icon {
+    max-width: 200px;
+    max-height: 73px;
+    margin-left: 2rem;
+    transform: translateY(-7px);
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    transform: none;
+}
+
+.navbutton {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: transparent; /* or your resting color */
+    text-decoration-thickness: 0.1rem;
+    transition: text-decoration-color 0.3s ease,
+              text-decoration-thickness 0.3s ease;
+}
+
+
+
+nav {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    max-height: 7%;
+}
+
+.nav {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 5rem;
+    z-index: 1000;
+}
+
+.navbutton:hover {
+    border-radius: 10px;
+    background-color: #484848;
+    color: white;
+    display: flex;
+    transition: text-decoration-color 0.3s ease, text-decoration-thickness 0.3s ease, background-color 0.3s ease;
+    text-decoration-line: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: #ff4c00;
+    text-decoration-thickness: 0.3rem;
+}
+
+
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    height: 15rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.white-icon {
+    filter: invert(100%);
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    color: white;
+    filter: invert(100%);
+    margin-bottom: 3rem;
+    
+}
+.social-icon:hover {
+    color: var(--accent-orange);
+    cursor: pointer;
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+#email-footer {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+#email-footer:hover {
+    color: var(--accent-orange);
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+
+}

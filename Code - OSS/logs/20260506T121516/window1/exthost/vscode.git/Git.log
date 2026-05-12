@@ -1,0 +1,88 @@
+2026-05-06 12:15:18.674 [info] [main] Log level: Info
+2026-05-06 12:15:18.674 [info] [main] Validating found git in: "git"
+2026-05-06 12:15:18.674 [info] [main] Using git "2.54.0" from "git"
+2026-05-06 12:15:18.674 [info] [Model][doInitialScan] Initial repository scan started
+2026-05-06 12:15:18.674 [info] > git rev-parse --show-toplevel [12ms]
+2026-05-06 12:15:18.674 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2026-05-06 12:15:18.674 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-05-06 12:15:35.002 [info] [main] Log level: Info
+2026-05-06 12:15:35.002 [info] [main] Validating found git in: "git"
+2026-05-06 12:15:35.002 [info] [main] Using git "2.54.0" from "git"
+2026-05-06 12:15:35.002 [info] [Model][doInitialScan] Initial repository scan started
+2026-05-06 12:15:35.002 [info] > git rev-parse --show-toplevel [7ms]
+2026-05-06 12:15:35.011 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [3ms]
+2026-05-06 12:15:35.056 [info] [Model][openRepository] Opened repository (path): /home/mika/RustroverProjects/ClipboardWriter
+2026-05-06 12:15:35.056 [info] [Model][openRepository] Opened repository (real path): /home/mika/RustroverProjects/ClipboardWriter
+2026-05-06 12:15:35.056 [info] [Model][openRepository] Opened repository (kind): repository
+2026-05-06 12:15:35.097 [info] > git rev-parse --show-toplevel [20ms]
+2026-05-06 12:15:35.098 [info] > git config --get commit.template [26ms]
+2026-05-06 12:15:35.099 [info] > git config --get --local core.virtualfilesystem [33ms]
+2026-05-06 12:15:35.099 [warning] [Git][config] git config failed: Failed to execute git
+2026-05-06 12:15:35.114 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-06 12:15:35.115 [info] > git rev-parse --show-toplevel [8ms]
+2026-05-06 12:15:35.251 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [137ms]
+2026-05-06 12:15:35.251 [warning] [Git][getBranch] No such branch: master
+2026-05-06 12:15:35.280 [info] > git status -z -uall [23ms]
+2026-05-06 12:15:35.280 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [16ms]
+2026-05-06 12:15:35.296 [info] > git rev-parse --show-toplevel [46ms]
+2026-05-06 12:15:35.297 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-05-06 12:15:35.321 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [26ms]
+2026-05-06 12:15:35.321 [warning] [Git][getBranch] No such branch: master
+2026-05-06 12:15:35.321 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for master: Error: No such branch: master.
+2026-05-06 12:15:35.328 [info] > git config --get commit.template [8ms]
+2026-05-06 12:15:35.336 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-06 12:15:35.337 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2026-05-06 12:15:35.337 [warning] [Git][getBranch] No such branch: master
+2026-05-06 12:15:35.349 [info] > git status -z -uall [7ms]
+2026-05-06 12:15:35.351 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2026-05-06 12:15:35.635 [info] > git check-ignore -v -z --stdin [20ms]
+2026-05-06 12:15:35.636 [info] > git config --get commit.template [36ms]
+2026-05-06 12:15:35.655 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-06 12:15:35.658 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2026-05-06 12:15:35.658 [warning] [Git][getBranch] No such branch: master
+2026-05-06 12:15:35.671 [info] > git status -z -uall [6ms]
+2026-05-06 12:15:35.678 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-05-06 12:15:45.719 [info] [main] Log level: Info
+2026-05-06 12:15:45.719 [info] [main] Validating found git in: "git"
+2026-05-06 12:15:45.719 [info] [main] Using git "2.54.0" from "git"
+2026-05-06 12:15:45.719 [info] [Model][doInitialScan] Initial repository scan started
+2026-05-06 12:15:45.719 [info] > git rev-parse --show-toplevel [7ms]
+2026-05-06 12:15:45.719 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [3ms]
+2026-05-06 12:15:45.767 [info] [Model][openRepository] Opened repository (path): /home/mika/RustroverProjects/Clipboard-Manager
+2026-05-06 12:15:45.767 [info] [Model][openRepository] Opened repository (real path): /home/mika/RustroverProjects/Clipboard-Manager
+2026-05-06 12:15:45.767 [info] [Model][openRepository] Opened repository (kind): repository
+2026-05-06 12:15:45.791 [info] > git rev-parse --show-toplevel [3ms]
+2026-05-06 12:15:45.792 [info] > git config --get commit.template [9ms]
+2026-05-06 12:15:45.793 [info] > git config --get --local core.virtualfilesystem [16ms]
+2026-05-06 12:15:45.793 [warning] [Git][config] git config failed: Failed to execute git
+2026-05-06 12:15:45.945 [info] > git rev-parse --show-toplevel [144ms]
+2026-05-06 12:15:45.984 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [40ms]
+2026-05-06 12:15:45.986 [info] > git rev-parse --show-toplevel [3ms]
+2026-05-06 12:15:46.011 [info] > git status -z -uall [9ms]
+2026-05-06 12:15:46.011 [info] > git rev-parse --show-toplevel [18ms]
+2026-05-06 12:15:46.012 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-05-06 12:15:46.016 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-05-06 12:15:46.076 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [24ms]
+2026-05-06 12:15:46.099 [info] > git config --get --local branch.master.vscode-merge-base [14ms]
+2026-05-06 12:15:46.099 [warning] [Git][config] git config failed: Failed to execute git
+2026-05-06 12:15:46.106 [info] > git config --get commit.template [31ms]
+2026-05-06 12:15:46.113 [info] > git reflog master --grep-reflog=branch: Created from *. [8ms]
+2026-05-06 12:15:46.130 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [11ms]
+2026-05-06 12:15:46.130 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2026-05-06 12:15:46.130 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2026-05-06 12:15:46.140 [info] > git merge-base refs/heads/master refs/remotes/origin/main [2ms]
+2026-05-06 12:15:46.147 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [17ms]
+2026-05-06 12:15:46.154 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% 943766c962c4b025e19db9a9c0f6ee56cfb85721...refs/remotes/origin/main -- [7ms]
+2026-05-06 12:15:46.179 [info] > git status -z -uall [15ms]
+2026-05-06 12:15:46.179 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-05-06 12:15:46.302 [info] > git check-ignore -v -z --stdin [1ms]
+2026-05-06 12:15:46.407 [info] > git check-ignore -v -z --stdin [2ms]
+2026-05-06 12:15:46.426 [info] > git show --textconv :src/main.rs [7ms]
+2026-05-06 12:15:46.429 [info] > git ls-files --stage -- src/main.rs [3ms]
+2026-05-06 12:15:46.454 [info] > git cat-file -s b2ad4f7444b23dc28c48e1cf19e6860f329c0e18 [19ms]
+2026-05-06 12:15:46.625 [info] > git config --get commit.template [41ms]
+2026-05-06 12:15:46.669 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2026-05-06 12:15:46.694 [info] > git status -z -uall [10ms]
+2026-05-06 12:15:46.694 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2026-05-06 12:16:01.074 [info] > git blame --root --incremental 943766c962c4b025e19db9a9c0f6ee56cfb85721 -- src/main.rs [5ms]

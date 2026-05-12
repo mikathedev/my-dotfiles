@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Cotion Theme",
+    "workbench.editor.empty.hint": "hidden",
+    "editor.wordWrap": "on",
+    "fiveServer.injectBody": true,
+    "git.enableSmartCommit": true
+}

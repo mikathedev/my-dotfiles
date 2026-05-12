@@ -1,0 +1,17 @@
+<application>
+  <component name="DimensionService">
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1826" height="277" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1826" height="277" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1826" height="277" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1826" height="277" />
+  </component>
+  <component name="WindowManager">
+    <frame x="260" y="40" width="1205" height="1032" extendedState="6" />
+  </component>
+  <component name="WindowStateApplicationService">
+    <state width="417" height="264" key="ShowUsagesActions.dimensionServiceKey" timestamp="1777334481788">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="417" height="264" key="ShowUsagesActions.dimensionServiceKey/0.0.1920.1080" timestamp="1777334481788" />
+  </component>
+</application>

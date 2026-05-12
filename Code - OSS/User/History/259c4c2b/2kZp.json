@@ -1,0 +1,63 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorCustomizations": {
+        // Overall Window
+        "editor.background": "#1b0619",
+        "sideBar.background": "#160515",
+        "activityBar.background": "#1b0619",
+        "statusBar.background": "#520e2e",
+        "statusBar.foreground": "#ff9eaf",
+        "titleBar.activeBackground": "#1b0619",
+        
+        // Editor Colors
+        "editor.foreground": "#f7e1e1",
+        "editorLineNumber.foreground": "#520e2e",
+        "editorLineNumber.activeForeground": "#ff748c",
+        "editorCursor.foreground": "#fee18e",
+        "editor.selectionBackground": "#520e2e88",
+        "editor.lineHighlightBackground": "#250a22",
+        
+        // UI Accents (The Pink & Yellow)
+        "activityBar.foreground": "#ff748c",
+        "activityBarBadge.background": "#fee18e",
+        "activityBarBadge.foreground": "#1b0619",
+        "list.activeSelectionBackground": "#520e2e",
+        "list.activeSelectionForeground": "#fee18e",
+        "focusBorder": "#ff748c",
+        
+        // Tabs
+        "tab.activeBackground": "#1b0619",
+        "tab.activeForeground": "#ff748c",
+        "tab.inactiveBackground": "#160515",
+        "tab.border": "#520e2e"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["comment", "punctuation.definition.comment"],
+                "settings": { "foreground": "#5e2d36", "fontStyle": "italic" }
+            },
+            {
+                "scope": ["keyword", "storage.type", "storage.modifier"],
+                "settings": { "foreground": "#ff748c", "fontStyle": "bold" }
+            },
+            {
+                "scope": ["variable", "string", "constant.other.symbol"],
+                "settings": { "foreground": "#f7e1e1" }
+            },
+            {
+                "scope": ["entity.name.function", "support.function"],
+                "settings": { "foreground": "#fee18e" }
+            },
+            {
+                "scope": ["constant.numeric", "constant.language", "support.constant"],
+                "settings": { "foreground": "#ff9e64" }
+            },
+            {
+                "scope": ["entity.name.tag", "entity.other.attribute-name"],
+                "settings": { "foreground": "#b52a5b" }
+            }
+        ]
+    },
+    "workbench.colorTheme": "Ako Theme"
+}

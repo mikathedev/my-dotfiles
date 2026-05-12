@@ -1,0 +1,4 @@
+-Xmx2048m
+-Dide.managed.by.toolbox=/opt/jetbrains-toolbox/jetbrains-toolbox
+-Dtoolbox.notification.token=95812576-a1f3-4675-bae9-ae6921ac7ec9
+-Dtoolbox.notification.portFile=/home/mika/.cache/JetBrains/Toolbox/ports/8b3298d7-d5cd-4917-ab6f-66a4df6f40a3.port

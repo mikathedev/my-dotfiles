@@ -1,0 +1,95 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "419ea5d8eb6323952637f0f2e42e4b3df7a714adaa4e8e15662a3d401927ccd8",
+    "telemetry.devDeviceId": "36e598d9-a353-427b-bc77-8812480d7110",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/mika/RustroverProjects/Clipboard-Manager"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/mika/.config/waybar": "__default__profile__",
+            "file:///home/mika/30-minute-dine": "__default__profile__",
+            "file:///home/mika/.config": "__default__profile__",
+            "file:///home/mika/RustroverProjects/ClipboardWriter": "__default__profile__",
+            "file:///home/mika/RustroverProjects/Clipboard-Manager": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#202020",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#c3c3c3",
+            "background": "#202020",
+            "editorBackground": "#202020",
+            "titleBarBackground": "#2a2a2a",
+            "activityBarBackground": "#202020",
+            "activityBarBorder": "#2f2f2f",
+            "sideBarBackground": "#202020",
+            "sideBarBorder": "#2f2f2f",
+            "statusBarBackground": "#007acc",
+            "statusBarNoFolderBackground": "#68217a"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 237,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/mika/RustroverProjects/Clipboard-Manager",
+            "backupPath": "/home/mika/.config/Code - OSS/Backups/47298f0457e3877b3939a34208d1b38a",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1920,
+                "height": 1080
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 237,
+            "auxiliaryBarWidth": 403,
+            "workspaces": {
+                "616a2600f18afc574d443c00f41c17b4": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "79701015dead4b2461cce3aa166eb5e8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "41379c053bfd018806a187ca80fa9c56": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "8b036e4a70f473edd4d385353a4b209a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "38f4a90d65eef257faf22bc0df45fd19": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

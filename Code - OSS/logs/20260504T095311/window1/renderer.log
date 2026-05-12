@@ -1,0 +1,11 @@
+2026-05-04 09:53:12.950 [info] Started local extension host with pid 1670419.
+2026-05-04 09:53:15.075 [error] Canceled: Canceled
+    at zI (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:383:1431)
+    at vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4930:47396
+    at Array.forEach (<anonymous>)
+    at a.dispose (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4930:47304)
+    at S1.dispose (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4930:60603)
+    at C2i.dispose (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4937:10470)
+    at w2i.stopAllInReverse (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4937:9610)
+    at async Amt._doStopExtensionHosts (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4936:22317)
+2026-05-04 09:53:15.076 [warning] [DefaultAccount] Attempt 1 to get sessions failed: Canceled

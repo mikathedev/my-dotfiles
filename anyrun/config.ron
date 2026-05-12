@@ -1,0 +1,41 @@
+// ============================================
+// Anyrun — config.ron
+// Catppuccin Mocha / Pill style
+// Place at: ~/.config/anyrun/config.ron
+// ============================================
+
+Config(
+    // Centered horizontally, sits ~25% from top (like a spotlight launcher)
+    x: Fraction(0.5),
+    y: Fraction(0.25),
+
+    // Width — fixed 500px, clean and compact
+    width: Absolute(500),
+    height: Absolute(0),     // auto height based on results
+
+    // Max results shown before scrolling
+    max_entries: Some(8),
+
+    // Cleaner look — hides "Apps", "Runner" etc labels
+    hide_plugin_info: true,
+
+    // Show icons next to results
+    hide_icons: false,
+
+    // Close when clicking outside
+    close_on_click: true,
+
+    // Don't flood results before typing
+    show_results_immediately: false,
+
+    // Sit above everything
+    layer: Top,
+    ignore_exclusive_zones: false,
+
+    // Plugins — comment out any you don't want
+    plugins: [
+    "/usr/lib/anyrun/libapplications.so",  // was libapps.so
+    "/usr/lib/anyrun/libshell.so",         // was libruncmd.so
+    "/usr/lib/anyrun/libwebsearch.so",
+],
+)

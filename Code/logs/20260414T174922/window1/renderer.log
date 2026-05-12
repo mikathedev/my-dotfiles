@@ -1,0 +1,33 @@
+2026-04-14 17:49:24.052 [info] Started local extension host with pid 58205.
+2026-04-14 17:49:24.152 [info] [DefaultAccount] Authentication provider is not declared. {"id":"github","name":"GitHub","enterprise":false}
+2026-04-14 17:49:25.172 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-04-14 17:49:26.776 [info] [perf] Render performance baseline is 37ms
+2026-04-14 17:49:42.218 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/tunnel-forwarding/package.json 
+2026-04-14 17:49:42.219 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/handlebars/package.json 
+2026-04-14 17:49:42.219 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/python/package.json 
+2026-04-14 17:49:42.219 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/ini/package.json 
+2026-04-14 17:49:42.219 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/fsharp/package.json 
+2026-04-14 17:49:42.220 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-tomorrow-night-blue/package.json 
+2026-04-14 17:49:42.220 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/pug/package.json 
+2026-04-14 17:49:42.220 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/latex/package.json 
+2026-04-14 17:49:42.221 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/lua/package.json 
+2026-04-14 17:49:42.221 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/make/package.json 
+2026-04-14 17:49:42.221 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-solarized-light/package.json 
+2026-04-14 17:49:42.221 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/markdown-language-features/package.json 
+2026-04-14 17:49:42.221 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/npm/package.json 
+2026-04-14 17:49:42.222 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/php-language-features/package.json 
+2026-04-14 17:49:42.222 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/sql/package.json 
+2026-04-14 17:49:42.222 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/objective-c/package.json 
+2026-04-14 17:49:42.222 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-abyss/package.json 
+2026-04-14 17:49:42.222 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-monokai/package.json 
+2026-04-14 17:49:42.223 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-monokai-dimmed/package.json 
+2026-04-14 17:49:42.223 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-defaults/package.json 
+2026-04-14 17:49:42.223 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/terminal-suggest/package.json 
+2026-04-14 17:49:42.223 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/theme-red/package.json 
+2026-04-14 17:49:42.223 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/notebook-renderers/package.json 
+2026-04-14 17:49:42.224 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/ms-vscode.js-debug/package.json 
+2026-04-14 17:49:42.224 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/references-view/package.json 
+2026-04-14 17:49:42.224 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/rust/package.json 
+2026-04-14 17:49:42.224 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/search-result/package.json 
+2026-04-14 17:49:42.225 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/shellscript/package.json 
+2026-04-14 17:49:42.225 [warning] [backup tracker] suspended, ignoring unregister event file:///usr/lib/visual-studio-code-electron/extensions/shaderlab/package.json 

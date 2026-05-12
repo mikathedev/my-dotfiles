@@ -1,0 +1,12 @@
+# settings
+
+(GimpGegl-gegl-cell-noise-config "2026-04-13 20:19:24"
+    (time 1776125964)
+    (scale 0.216)
+    (shape 1.7909999999999999)
+    (rank 1)
+    (iterations 2)
+    (palettize no)
+    (seed 0))
+
+# end of settings

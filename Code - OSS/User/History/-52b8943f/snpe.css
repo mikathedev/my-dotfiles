@@ -1,0 +1,114 @@
+/* Global Reset & Typography */
+* {
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome", "Helvetica", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+/* The Bar Container */
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.8); /* Darker, more modern slate */
+    color: #c0caf5;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hidden State */
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Styling for the Individual Modules */
+/* This creates the 'capsule' look for each group */
+#workspaces,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#wireplumber,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-media {
+    padding: 0 12px;
+    margin: 4px 3px;
+    background-color: #24283b; /* Slightly lighter than bar background */
+    border-radius: 8px;
+    color: #a9b1d6;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+    padding: 0 8px;
+    color: #565f89;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: #7aa2f7;
+    background-color: rgba(122, 162, 247, 0.15);
+    border-bottom: 2px solid #7aa2f7;
+}
+
+#workspaces button.urgent {
+    background-color: #f7768e;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+/* --- Specialized Module Colors --- */
+/* Instead of harsh solid backgrounds, we use colored text/icons with subtle backgrounds */
+
+#clock {
+    color: #7aa2f7; /* Blue */
+    font-weight: bold;
+}
+
+#battery.charging, #battery.plugged {
+    color: #9ece6a; /* Green */
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f7768e;
+    color: #ffffff;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+#cpu { color: #bb9af7; }    /* Purple */
+#memory { color: #ff9e64; } /* Orange */
+#network { color: #7dcfff; } /* Cyan */
+
+#wireplumber {
+    color: #e0af68; /* Yellow */
+}
+
+#wireplumber.muted {
+    color: #565f89;
+}
+
+#temperature { color: #f7768e; }
+#temperature.critical { background-color: #f7768e; color: #ffffff; }
+
+#tray {
+    margin-right: 10px;
+}
+
+/* --- Animations --- */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #f7768e;
+    }
+}

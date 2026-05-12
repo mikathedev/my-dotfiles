@@ -1,0 +1,97 @@
+/* Global Reset & Typography */
+* {
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome", "Helvetica", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+/* The Bar Container - Deep Deep Purple from the sky's top */
+window#waybar {
+    background-color: rgba(30, 6, 28, 0.85); 
+    color: #f7e1e1;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-bottom: 2px solid rgba(255, 116, 140, 0.2);
+}
+
+/* Hidden State */
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Styling for the Individual Modules */
+#custom-media,
+#wireplumber,
+#custom-bluetooth,
+#clock,
+#network,
+#custom-power,
+#battery {
+    padding: 0 15px;
+    margin: 5px 4px;
+    background-color: rgba(82, 14, 46, 0.4); /* Muted magenta-purple */
+    border-radius: 12px; /* Slightly rounder for the 'smooth' sunset feel */
+    color: #ff9eaf;
+    transition: all, 0.3s, ease;
+}
+
+
+/* --- Left Modules (Media & Sound) --- */
+#custom-media {
+    color: #ff748c; /* Vibrant pink from the clouds */
+}
+
+#wireplumber {
+    color: #ff9e64; /* Soft orange from the lower sky */
+}
+
+#wireplumber.muted {
+    color: #5e2d36;
+    background-color: rgba(30, 6, 28, 0.6);
+}
+
+#custom-bluetooth {
+    color: #b52a5b; /* Deep magenta */
+}
+
+/* --- Center Module (Clock) --- */
+#clock {
+    color: #fee18e; /* The bright sun yellow */
+    font-weight: bold;
+    background-color: rgba(254, 225, 142, 0.1); /* Subtle glow */
+    border: 1px solid rgba(254, 225, 142, 0.2);
+}
+
+/* --- Right Modules (System) --- */
+#network {
+    color: #ff748c;
+}
+
+#custom-power {
+    color: #f7768e;
+    padding-right: 18px; /* Extra space for the end of the bar */
+    font-size: 20px;
+}
+
+#battery {
+    color: #fee18e;
+}
+
+#battery.charging, #battery.plugged {
+    color: #9ece6a; /* Keep green for utility clarity */
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff3c5f;
+    color: #ffffff;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+/* --- Animations --- */
+@keyframes blink {
+    to {
+        background-color: #fee18e;
+        color: #30061c;
+    }
+}

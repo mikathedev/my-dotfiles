@@ -1,0 +1,970 @@
+<project version="4">
+  <component name="AgentBraveModeToggleService">
+    <option name="sessions">
+      <map>
+        <entry key="0000beff-d413-449b-94e8-48474c6c1131" value="false" />
+        <entry key="1513f91d-fa6b-4ffa-ba9e-d9a79a7f14e3" value="false" />
+        <entry key="34acb610-f022-47ec-b049-c97db0057434" value="false" />
+        <entry key="4ef07075-4843-4b60-8afe-5c9dc75e1fb1" value="false" />
+        <entry key="5c3820f8-58d4-4718-bd63-1bbe42cbcf77" value="false" />
+        <entry key="5dd8920d-db57-42bb-8470-b66f656ad121" value="false" />
+        <entry key="74461d98-e68b-445c-8dfa-cda804c6de0c" value="false" />
+        <entry key="7c30e302-bbe0-4116-9b91-7999b39293dc" value="false" />
+        <entry key="819cbf74-6d07-46d9-a70e-00ec5f78bf15" value="false" />
+        <entry key="83df6295-cdec-414f-855e-8546b0b61209" value="false" />
+        <entry key="9621caef-8437-4ab3-b635-8e9db90e1289" value="false" />
+        <entry key="b14b7cb5-3ff9-4a00-b74b-5b14dde25fcd" value="false" />
+        <entry key="d091b3f8-080e-40c9-8625-1b8f28d972b5" value="false" />
+        <entry key="dff8bb88-60f0-4c4c-a7ed-f5ef62ad44a2" value="false" />
+        <entry key="e22879f4-1563-41bb-88d7-e6fa7b7788ff" value="false" />
+        <entry key="e8809138-ee5e-4306-885a-af9c1a6037d2" value="false" />
+        <entry key="ee0c7067-62c8-4ed2-885b-6952948a8212" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="pirate-app-tauri" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="ChatSessionStateTemp">
+    <option name="chats">
+      <list>
+        <SerializedChat>
+          <option name="chatContext">
+            <SerializedChatContext />
+          </option>
+          <option name="chatModelId" value="chat_mode" />
+          <option name="messages">
+            <list>
+              <SerializedChatMessage>
+                <option name="attachments">
+                  <list>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="Information about open file in the editor" />
+                      <option name="text" value="```rust&#10;// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/&#10;use serde_json::Value;&#10;use std::collections::HashMap;&#10;use serde::{Deserialize, Serialize};&#10;use std::env;&#10;use std::fmt::format;&#10;use stream_download::source::DecodeError;&#10;use stream_download::storage::temp::TempStorageProvider;&#10;use stream_download::{Settings, StreamDownload};&#10;use stream_download::http::{Client, HttpStream};&#10;use tokio::io::AsyncWriteExt;&#10;&#10;#[derive(Deserialize)]&#10;struct Show {&#10;    path: String,&#10;    episode: u32,&#10;    season: String,&#10;    show: bool,&#10;    url: String,&#10;    #[serde(rename = &quot;episode links&quot;)]  // CHANGED: handle the space in key&#10;    episode_links: HashMap&lt;String, HashMap&lt;String, String&gt;&gt;,&#10;}&#10;fn get_json_data() -&gt; String {&#10;    return std::fs::read_to_string(&quot;shows.json&quot;).unwrap()&#10;}&#10;&#10;fn get_link(show: &amp;str) -&gt; String {&#10;    let content = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;content).unwrap();&#10;    let show_info = &amp;shows[show];&#10;    let season = &amp;show_info.season;&#10;    let episode = &amp;show_info.episode.to_string();&#10;    let episode_link = &amp;show_info.episode_links[season][episode];&#10;&#10;    if episode_link.contains(&quot;https://&quot;) {&#10;        episode_link.to_string()&#10;    } else {&#10;        format!(&quot;https://a.111477.xyz{}&quot;, episode_link)&#10;    }&#10;}&#10;#[tauri::command]&#10;#[tokio::main]&#10;async fn download(show: &amp;str) -&gt; Result&lt;Response, String&gt;{&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&quot;{}/{}{}{}&quot;, show.path, show.season, format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()), link.split(&quot;.&quot;).last().unwrap().to_string());&#10;    let mut reader = StreamDownload::new_http(link.parse().unwrap(), TempStorageProvider::default(), Settings::default());&#10;    &#10;    let mut buf = Vec::new();&#10;    reader.&#10;&#10;    // CHANGED: write to specific location after reading&#10;    std::fs::write(&quot;F:/Community/output.mp3&quot;, &amp;buf)?;&#10;&#10;&#10;    Ok(())&#10;&#10;}&#10;&#10;#[tauri::command]&#10;fn get_options() -&gt; Vec&lt;String&gt; {&#10;    let content = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;content).unwrap();&#10;    let mut options: Vec&lt;String&gt; = Vec::new();&#10;    for (show, _) in shows.iter() {&#10;        options.push(show.to_string());&#10;    }&#10;    options&#10;}&#10;&#10;#[cfg_attr(mobile, tauri::mobile_entry_point)]&#10;pub fn run() {&#10;    tauri::Builder::default()&#10;        .plugin(tauri_plugin_dialog::init())&#10;        .plugin(tauri_plugin_opener::init())&#10;        .invoke_handler(tauri::generate_handler![download, get_options])&#10;        .run(tauri::generate_context!())&#10;        .expect(&quot;error while running tauri application&quot;);&#10;}&#10;&#10;```" />
+                    </SerializedChatAttachment>
+                  </list>
+                </option>
+                <option name="markupLanguageID" value="ChatInput" />
+                <option name="uid" value="UUID(uuid=d51c5d2c-b39d-4127-b031-3d740833763f)" />
+                <option name="displayContent" value="how can I save the file from the reader&#10;```rust&#10;let mut reader = StreamDownload::new_http(link.parse().unwrap(), TempStorageProvider::default(), Settings::default());&#10;```&#10;" />
+                <option name="internalContent" value="how can I save the file from the reader&#10;```rust&#10;let mut reader = StreamDownload::new_http(link.parse().unwrap(), TempStorageProvider::default(), Settings::default());&#10;```&#10;" />
+              </SerializedChatMessage>
+              <SerializedChatMessage>
+                <option name="author" value="Assistant" />
+                <option name="uid" value="546a66b7-99e7-4947-9a5a-5b466ccd4731" />
+                <option name="displayContent" value="`StreamDownload` is a **reader**, so you save it by **reading bytes from it and writing those bytes into a file**.&#10;&#10;If it implements `AsyncRead`, the simplest way is to use `tokio::io::copy`:&#10;&#10;```rust&#10;use std::fs::File;&#10;use tokio::io::BufWriter;&#10;use tokio::io::copy;&#10;&#10;let mut reader = StreamDownload::new_http(&#10;    link.parse().unwrap(),&#10;    TempStorageProvider::default(),&#10;    Settings::default(),&#10;);&#10;&#10;let file = File::create(&quot;F:/Community/output.mp3&quot;).unwrap();&#10;let mut writer = BufWriter::new(file);&#10;&#10;copy(&amp;mut reader, &amp;mut writer).await.unwrap();&#10;```&#10;&#10;If `StreamDownload` does **not** implement `AsyncRead`, then you need to read it chunk by chunk with whatever read method the type provides, and write each chunk to the file.&#10;&#10;A manual chunked version usually looks like this:&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;use std::fs::File;&#10;use tokio::io::BufWriter;&#10;&#10;let mut reader = StreamDownload::new_http(&#10;    link.parse().unwrap(),&#10;    TempStorageProvider::default(),&#10;    Settings::default(),&#10;);&#10;&#10;let file = File::create(&quot;F:/Community/output.mp3&quot;).unwrap();&#10;let mut writer = BufWriter::new(file);&#10;&#10;let mut buf = [0u8; 8192];&#10;&#10;loop {&#10;    let n = reader.read(&amp;mut buf).await.unwrap();&#10;    if n == 0 {&#10;        break;&#10;    }&#10;    writer.write_all(&amp;buf[..n]).await.unwrap();&#10;}&#10;&#10;writer.flush().await.unwrap();&#10;```&#10;&#10;### Important notes&#10;- `std::fs::write(..., &amp;buf)` only works if you already filled `buf` with file data.&#10;- Your code currently creates `buf`, but never reads anything into it.&#10;- Also, the function should return a `Result&lt;_, String&gt;` consistently if you use `?` with file I/O, or convert the error type properly.&#10;&#10;If you want, I can rewrite your `download` function into a working version for your exact setup." />
+                <option name="internalContent" value="`StreamDownload` is a **reader**, so you save it by **reading bytes from it and writing those bytes into a file**.&#10;&#10;If it implements `AsyncRead`, the simplest way is to use `tokio::io::copy`:&#10;&#10;```rust&#10;use std::fs::File;&#10;use tokio::io::BufWriter;&#10;use tokio::io::copy;&#10;&#10;let mut reader = StreamDownload::new_http(&#10;    link.parse().unwrap(),&#10;    TempStorageProvider::default(),&#10;    Settings::default(),&#10;);&#10;&#10;let file = File::create(&quot;F:/Community/output.mp3&quot;).unwrap();&#10;let mut writer = BufWriter::new(file);&#10;&#10;copy(&amp;mut reader, &amp;mut writer).await.unwrap();&#10;```&#10;&#10;If `StreamDownload` does **not** implement `AsyncRead`, then you need to read it chunk by chunk with whatever read method the type provides, and write each chunk to the file.&#10;&#10;A manual chunked version usually looks like this:&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;use std::fs::File;&#10;use tokio::io::BufWriter;&#10;&#10;let mut reader = StreamDownload::new_http(&#10;    link.parse().unwrap(),&#10;    TempStorageProvider::default(),&#10;    Settings::default(),&#10;);&#10;&#10;let file = File::create(&quot;F:/Community/output.mp3&quot;).unwrap();&#10;let mut writer = BufWriter::new(file);&#10;&#10;let mut buf = [0u8; 8192];&#10;&#10;loop {&#10;    let n = reader.read(&amp;mut buf).await.unwrap();&#10;    if n == 0 {&#10;        break;&#10;    }&#10;    writer.write_all(&amp;buf[..n]).await.unwrap();&#10;}&#10;&#10;writer.flush().await.unwrap();&#10;```&#10;&#10;### Important notes&#10;- `std::fs::write(..., &amp;buf)` only works if you already filled `buf` with file data.&#10;- Your code currently creates `buf`, but never reads anything into it.&#10;- Also, the function should return a `Result&lt;_, String&gt;` consistently if you use `?` with file I/O, or convert the error type properly.&#10;&#10;If you want, I can rewrite your `download` function into a working version for your exact setup." />
+              </SerializedChatMessage>
+              <SerializedChatMessage>
+                <option name="attachments">
+                  <list>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="Information about open file in the editor" />
+                      <option name="text" value="```rust&#10;// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/&#10;use serde_json::Value;&#10;use std::collections::HashMap;&#10;use serde::{Deserialize, Serialize};&#10;use std::env;&#10;use std::fmt::format;&#10;use stream_download::source::DecodeError;&#10;use stream_download::storage::temp::TempStorageProvider;&#10;use stream_download::{Settings, StreamDownload};&#10;use stream_download::http::{Client, HttpStream};&#10;use tokio::fs::copy;&#10;use tokio::io::{AsyncWriteExt, BufWriter};&#10;&#10;#[derive(Deserialize)]&#10;struct Show {&#10;    path: String,&#10;    episode: u32,&#10;    season: String,&#10;    show: bool,&#10;    url: String,&#10;    #[serde(rename = &quot;episode links&quot;)]  // CHANGED: handle the space in key&#10;    episode_links: HashMap&lt;String, HashMap&lt;String, String&gt;&gt;,&#10;}&#10;fn get_json_data() -&gt; String {&#10;    return std::fs::read_to_string(&quot;shows.json&quot;).unwrap()&#10;}&#10;&#10;fn get_link(show: &amp;str) -&gt; String {&#10;    let content = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;content).unwrap();&#10;    let show_info = &amp;shows[show];&#10;    let season = &amp;show_info.season;&#10;    let episode = &amp;show_info.episode.to_string();&#10;    let episode_link = &amp;show_info.episode_links[season][episode];&#10;&#10;    if episode_link.contains(&quot;https://&quot;) {&#10;        episode_link.to_string()&#10;    } else {&#10;        format!(&quot;https://a.111477.xyz{}&quot;, episode_link)&#10;    }&#10;}&#10;#[tauri::command]&#10;#[tokio::main]&#10;async fn download(show: &amp;str) -&gt; Result&lt;Response, String&gt;{&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&quot;{}/{}{}{}&quot;, show.path, show.season, format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()), link.split(&quot;.&quot;).last().unwrap().to_string());&#10;    let mut reader = StreamDownload::new_http(link.parse().unwrap(), TempStorageProvider::default(), Settings::default());&#10;    let file = tokio::fs::File::create(file_name).unwrap();&#10;    let mut writer = BufWriter::new(file);&#10;    &#10;    copy(&amp;mut reader, &amp;mut writer).await.unwrap();&#10;    println!(&#10;        &quot;Downloaded {} to {}&quot;,&#10;        file_name,&#10;        env::current_dir().unwrap().display()&#10;    );&#10;&#10;    Ok(())&#10;&#10;}&#10;&#10;#[tauri::command]&#10;fn get_options() -&gt; Vec&lt;String&gt; {&#10;    let content = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;content).unwrap();&#10;    let mut options: Vec&lt;String&gt; = Vec::new();&#10;    for (show, _) in shows.iter() {&#10;        options.push(show.to_string());&#10;    }&#10;    options&#10;}&#10;&#10;#[cfg_attr(mobile, tauri::mobile_entry_point)]&#10;pub fn run() {&#10;    tauri::Builder::default()&#10;        .plugin(tauri_plugin_dialog::init())&#10;        .plugin(tauri_plugin_opener::init())&#10;        .invoke_handler(tauri::generate_handler![download, get_options])&#10;        .run(tauri::generate_context!())&#10;        .expect(&quot;error while running tauri application&quot;);&#10;}&#10;&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src/routes/+page.svelte" />
+                      <option name="name" value="+page.svelte" />
+                      <option name="text" value="```svelte&#10;&lt;script lang=&quot;ts&quot;&gt;&#10;  import { convertFileSrc, invoke } from &quot;@tauri-apps/api/core&quot;;&#10;  import {getCurrentWindow} from &quot;@tauri-apps/api/window&quot;;&#10;  import { open } from '@tauri-apps/plugin-dialog';&#10;  import VideoPlayer from 'svelte-video-player';&#10;&#10;&#10;  let show = $state(&quot;Community&quot;)&#10;  let src = $state(&quot;&quot;)&#10;  let dialog: HTMLDialogElement&#10;  let options = $state([])&#10;  let playing = $state(false);&#10;&#10;  function closeWindow() {&#10;     const window = getCurrentWindow();&#10;     window.close();&#10;  }&#10;  async function get_options() {&#10;   options = await invoke(&quot;get_options&quot;)&#10;   console.log(options)&#10;  }&#10;  // CHANGED: svelte action to track video state&#10;  function trackPlaying(node: HTMLElement) {&#10;   const video = node.querySelector('video');&#10;   if (!video) return {};&#10;   const onPlay = () =&gt; { playing = true };&#10;   const onPause = () =&gt; { playing = false; }&#10;   video.addEventListener('play', onPlay);&#10;   video.addEventListener('pause', onPause);&#10;   return {&#10;    destroy() {&#10;     video.removeEventListener('play', onPlay);&#10;     video.removeEventListener('pause', onPause);&#10;    }&#10;   };&#10;  }&#10;&#10;  function downloadFile() {&#10;   invoke(&quot;download&quot;, { show: show }).then((res) =&gt; {console.log(res)})&#10;  }&#10;  async function getVideoPath(show: string) {&#10;   const file: string = await invoke(&quot;get_video_path&quot;, { show: show })&#10;   src = convertFileSrc(file)&#10;  }&#10;  async function getVideoPath2(show: string) {&#10;   //const file: string = await invoke(&quot;get_video_path&quot;, { show: show })&#10;   let file = 'F:/Community/0410.mp4'&#10;   src = convertFileSrc(file)&#10;  }&#10;&#10;  getVideoPath(show)&#10;  get_options()&#10;&lt;/script&gt;&#10;&#10;&lt;nav&gt;&#10; &lt;select bind:value={show}&gt;&#10;    {#each options as show}&#10;     &lt;option value={show}&gt;{show}&lt;/option&gt;&#10;    {/each}&#10;&#10; &lt;/select&gt;&#10; &lt;button onclick={() =&gt; getVideoPath(show)}&gt;Get Video&lt;/button&gt;&#10; &lt;button onclick={() =&gt; downloadFile()}&gt;run download&lt;/button&gt;&#10; &lt;button class=&quot;open-modal&quot; onclick={() =&gt; dialog.showModal()}&gt;Open Modal&lt;/button&gt;&#10; &lt;div data-tauri-drag-region&gt;&lt;/div&gt;&#10; &lt;button onclick={closeWindow}&gt;&#10;  &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&#10;   &lt;path&#10;           d=&quot;M18 6L6 18M6 6L18 18&quot;&#10;           stroke=&quot;currentColor&quot;&#10;           stroke-width=&quot;2&quot;&#10;           stroke-linecap=&quot;round&quot;&#10;           stroke-linejoin=&quot;round&quot;&#10;   /&gt;&#10;  &lt;/svg&gt;&#10; &lt;/button&gt;&#10;&lt;/nav&gt;&#10;&lt;main class=&quot;container&quot;&gt;&#10; &lt;div class=&quot;video-player&quot; use:trackPlaying&gt;&#10; {#key src}&#10;  &lt;VideoPlayer&#10;  width=&quot;1920&quot;&#10;  height=&quot;1080&quot;&#10;  source={src}&#10;  autoplay={true}&#10;  /&gt;&#10; {/key}&#10; &lt;/div&gt;&#10;&lt;/main&gt;&#10;&#10;&lt;dialog bind:this={dialog}&gt;&#10; &lt;p&gt;This is a native modal!&lt;/p&gt;&#10; &lt;button onclick={() =&gt; getVideoPath2(show)}&gt;Get Video2&lt;/button&gt;&#10; &lt;button onclick={() =&gt; dialog.close()}&gt;Close&lt;/button&gt;&#10;&lt;/dialog&gt;&#10;&#10;&lt;style&gt;&#10; main {&#10;  display: flex;&#10;  justify-content: center;&#10; }&#10;&#10; nav {&#10;  display: flex;&#10;  min-height: 2rem;&#10;  height: 2.5vh;&#10;  margin-bottom: 1rem;&#10; }&#10;&#10; nav div {&#10;  flex: 1;&#10; }&#10;&#10; nav div:hover {&#10;  cursor: pointer;&#10; }&#10;&#10; button {&#10;  background-color: #FF6331;&#10;  border: none;&#10;  color: white;&#10;  padding: 7px 16px;&#10;  margin: 0 2px 0 2px;&#10;  text-align: center;&#10;  text-decoration: none;&#10;  display: inline-block;&#10;  font-size: 16px;&#10;  border-radius: 10px;&#10; }&#10;&#10; .video-player {&#10;  width: 100%;&#10;  max-width: calc(95vh * (16 / 9));&#10; }&#10;&#10;&#10;&#10;&lt;/style&gt;&#10;&#10;```" />
+                    </SerializedChatAttachment>
+                  </list>
+                </option>
+                <option name="markupLanguageID" value="ChatInput" />
+                <option name="uid" value="UUID(uuid=97befbb4-ca5a-4a11-b024-3aeb9f9812a8)" />
+                <option name="displayContent" value="is this right" />
+                <option name="internalContent" value="is this right" />
+              </SerializedChatMessage>
+              <SerializedChatMessage>
+                <option name="author" value="Assistant" />
+                <option name="uid" value="ffe1690f-f9b0-48b4-9ac0-e7dcf1d2461b" />
+                <option name="displayContent" value="Not quite.&#10;&#10;A few issues:&#10;&#10;1. **`copy` import is wrong**&#10;   You imported:&#10;&#10;```rust&#10;use tokio::fs::copy;&#10;```&#10;&#10;But `copy` comes from:&#10;&#10;```rust&#10;use tokio::io::copy;&#10;```&#10;&#10;2. **`download` return type doesn’t match**&#10;   You wrote:&#10;&#10;```rust&#10;async fn download(show: &amp;str) -&gt; Result&lt;Response, String&gt;&#10;```&#10;&#10;but you return:&#10;&#10;```rust&#10;Ok(())&#10;```&#10;&#10;That should be something like `Result&lt;(), String&gt;` unless you really have a `Response` type you want to return.&#10;&#10;3. **`#[tokio::main]` should not be on a Tauri command**&#10;   A Tauri command is already called inside an async runtime. `#[tokio::main]` creates a new runtime and is not the right pattern here.&#10;&#10;4. **`copy(&amp;mut reader, &amp;mut writer)` only works if `StreamDownload` implements `AsyncRead`**&#10;   If it does, then this is fine after fixing the import. If it doesn’t, you’ll need to read chunks manually.&#10;&#10;5. **You should flush the writer**&#10;   After copying, it’s good to flush:&#10;&#10;```rust&#10;writer.flush().await.unwrap();&#10;```&#10;&#10;### A corrected version would look like this:&#10;&#10;```rust&#10;use tokio::io::{copy, BufWriter};&#10;&#10;#[tauri::command]&#10;async fn download(show: &amp;str) -&gt; Result&lt;(), String&gt; {&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&#10;        &quot;{}/{}{}{}&quot;,&#10;        show.path,&#10;        show.season,&#10;        format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()),&#10;        link.split(&quot;.&quot;).last().unwrap().to_string()&#10;    );&#10;&#10;    let mut reader = StreamDownload::new_http(&#10;        link.parse().unwrap(),&#10;        TempStorageProvider::default(),&#10;        Settings::default(),&#10;    );&#10;&#10;    let file = tokio::fs::File::create(file_name.clone())&#10;        .await&#10;        .map_err(|e| e.to_string())?;&#10;    let mut writer = BufWriter::new(file);&#10;&#10;    copy(&amp;mut reader, &amp;mut writer)&#10;        .await&#10;        .map_err(|e| e.to_string())?;&#10;&#10;    writer.flush().await.map_err(|e| e.to_string())?;&#10;&#10;    Ok(())&#10;}&#10;```&#10;&#10;If you want, I can also help you make this compile cleanly with proper error handling and without the `unwrap()` calls." />
+                <option name="internalContent" value="Not quite.&#10;&#10;A few issues:&#10;&#10;1. **`copy` import is wrong**&#10;   You imported:&#10;&#10;```rust&#10;use tokio::fs::copy;&#10;```&#10;&#10;But `copy` comes from:&#10;&#10;```rust&#10;use tokio::io::copy;&#10;```&#10;&#10;2. **`download` return type doesn’t match**&#10;   You wrote:&#10;&#10;```rust&#10;async fn download(show: &amp;str) -&gt; Result&lt;Response, String&gt;&#10;```&#10;&#10;but you return:&#10;&#10;```rust&#10;Ok(())&#10;```&#10;&#10;That should be something like `Result&lt;(), String&gt;` unless you really have a `Response` type you want to return.&#10;&#10;3. **`#[tokio::main]` should not be on a Tauri command**&#10;   A Tauri command is already called inside an async runtime. `#[tokio::main]` creates a new runtime and is not the right pattern here.&#10;&#10;4. **`copy(&amp;mut reader, &amp;mut writer)` only works if `StreamDownload` implements `AsyncRead`**&#10;   If it does, then this is fine after fixing the import. If it doesn’t, you’ll need to read chunks manually.&#10;&#10;5. **You should flush the writer**&#10;   After copying, it’s good to flush:&#10;&#10;```rust&#10;writer.flush().await.unwrap();&#10;```&#10;&#10;### A corrected version would look like this:&#10;&#10;```rust&#10;use tokio::io::{copy, BufWriter};&#10;&#10;#[tauri::command]&#10;async fn download(show: &amp;str) -&gt; Result&lt;(), String&gt; {&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&#10;        &quot;{}/{}{}{}&quot;,&#10;        show.path,&#10;        show.season,&#10;        format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()),&#10;        link.split(&quot;.&quot;).last().unwrap().to_string()&#10;    );&#10;&#10;    let mut reader = StreamDownload::new_http(&#10;        link.parse().unwrap(),&#10;        TempStorageProvider::default(),&#10;        Settings::default(),&#10;    );&#10;&#10;    let file = tokio::fs::File::create(file_name.clone())&#10;        .await&#10;        .map_err(|e| e.to_string())?;&#10;    let mut writer = BufWriter::new(file);&#10;&#10;    copy(&amp;mut reader, &amp;mut writer)&#10;        .await&#10;        .map_err(|e| e.to_string())?;&#10;&#10;    writer.flush().await.map_err(|e| e.to_string())?;&#10;&#10;    Ok(())&#10;}&#10;```&#10;&#10;If you want, I can also help you make this compile cleanly with proper error handling and without the `unwrap()` calls." />
+              </SerializedChatMessage>
+            </list>
+          </option>
+          <option name="modifiedAt" value="1776470124301" />
+          <option name="statisticInformation">
+            <ChatStatisticInformation>
+              <option name="sourceActionType" value="CUSTOM_CHAT" />
+              <option name="timestamp" value="1776470124301" />
+            </ChatStatisticInformation>
+          </option>
+          <option name="title">
+            <SerializedChatTitle>
+              <option name="custom" value="true" />
+              <option name="text" value="Saving StreamDownload Output to File in Rust" />
+            </SerializedChatTitle>
+          </option>
+          <option name="uid" value="dff8bb88-60f0-4c4c-a7ed-f5ef62ad44a2" />
+        </SerializedChat>
+        <SerializedChat>
+          <option name="chatContext">
+            <SerializedChatContext />
+          </option>
+          <option name="chatModelId" value="chat_mode" />
+          <option name="messages">
+            <list>
+              <SerializedChatMessage>
+                <option name="attachments">
+                  <list>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`APP_HANDLE` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;static APP_HANDLE: OnceLock&lt;AppHandle&gt; = OnceLock::new();&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`get_json_data` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;fn get_json_data() -&gt; String {&#10;    std::fs::read_to_string(&quot;shows.json&quot;).unwrap()&#10;}&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`emit` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;fn emit(data: String) {&#10;    if let Some(app_handle) = APP_HANDLE.get() {&#10;        app_handle.emit(&quot;BE&quot;, data).unwrap();&#10;    }&#10;}&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/main.rs" />
+                      <option name="name" value="`main.rs` sibling file text :" />
+                      <option name="text" value="```rust&#10;// Prevents additional console window on Windows in release, DO NOT REMOVE!!&#10;#![cfg_attr(not(debug_assertions), windows_subsystem = &quot;windows&quot;)]&#10;&#10;fn main() {&#10;    new_pirate_app_lib::run()&#10;}&#10;&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`Show` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;#[derive(Deserialize, Serialize, Debug)]&#10;&#10;struct Show {&#10;    path: String,&#10;    episode: u32,&#10;    season: String,&#10;    url: String,&#10;    #[serde(rename = &quot;episode links&quot;)]&#10;    episode_links: HashMap&lt;String, HashMap&lt;String, String&gt;&gt;,&#10;}&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`run` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;#[cfg_attr(mobile, tauri::mobile_entry_point)]&#10;pub fn run() {&#10;    tauri::Builder::default()&#10;        .plugin(tauri_plugin_dialog::init())&#10;        .plugin(tauri_plugin_opener::init())&#10;        .invoke_handler(tauri::generate_handler![download, get_options, get_video_path, scrape])&#10;        .run(tauri::generate_context!())&#10;        .expect(&quot;error while running tauri application&quot;);&#10;}&#10;```" />
+                    </SerializedChatAttachment>
+                    <SerializedChatAttachment>
+                      <option name="url" value="file://$PROJECT_DIR$/src-tauri/src/lib.rs" />
+                      <option name="name" value="`get_link` declaration" />
+                      <option name="text" value="```rust&#10;// In crate root&#10;fn get_link(show: &amp;str) -&gt; String {&#10;    let content = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;content).unwrap();&#10;    let show_info = &amp;shows[show];&#10;    let season = &amp;show_info.season;&#10;    let episode = &amp;show_info.episode.to_string();&#10;    println!(&quot;season: {}, episode: {}&quot;, season, episode);&#10;    println!(&quot;{:?}&quot;, show_info.episode_links[season]);&#10;    let episode_link = &amp;show_info.episode_links[season][episode];&#10;&#10;    if episode_link.contains(&quot;https://&quot;) {&#10;        episode_link.to_string()&#10;    } else {&#10;        format!(&quot;https://a.111477.xyz{}&quot;, episode_link)&#10;    }&#10;}&#10;```" />
+                    </SerializedChatAttachment>
+                  </list>
+                </option>
+                <option name="uid" value="UUID(uuid=509cb966-13ad-4606-babd-1b9f0420b8cc)" />
+                <option name="displayContent" value="Find potential problems in &#10;```rust&#10;#[tauri::command]&#10;async fn download(show: &amp;str) -&gt; Result&lt;String, String&gt;{&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&quot;{}/{}{}.{}&quot;, show.path, show.season, format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()), link.split(&quot;.&quot;).last().unwrap().to_string());&#10;    //client logic&#10;    println!(&quot;starting {:?}&quot;, file_name);&#10;    let client = reqwest::Client::new();&#10;    println!(&quot;{:?}&quot;, client);&#10;    println!(&quot;{:?}&quot;, link);&#10;    let response = client.get(&amp;link).send().await.map_err(|e| e.to_string())?;&#10;    if !response.status().is_success() {&#10;        return Err(format!(&quot;Request failed: {}&quot;, response.status()));&#10;    } else {&#10;        println!(&quot;Sucsess: {:?}&quot;, response);&#10;    }&#10;    let size = response.content_length().unwrap_or(0);&#10;    let mut file = std::fs::File::create(&amp;file_name).map_err(|e| println!(&quot;Error {}&quot;, e.to_string()));&#10;    let mut stream = response.bytes_stream();&#10;    println!(&quot;Downloading {}...&quot;, file_name);&#10;    if let Some(parent) = std::path::Path::new(&amp;file_name).parent() {&#10;        std::fs::create_dir_all(parent).map_err(|e| e.to_string())?;&#10;    }&#10;    let mut last_emit = std::time::Instant::now();&#10;    let mut downloaded = 0;&#10;    while let Some(chunk) = &amp;stream.next().await {&#10;        let chunk_error_handler = chunk.as_ref().map_err(|e| e.to_string())?;&#10;        file.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;        downloaded += chunk_error_handler.len();&#10;        let mut progress = downloaded as f64 / size as f64;&#10;        if last_emit.elapsed().as_millis() &gt; 500 {&#10;            progress = downloaded as f64 / size as f64;&#10;            emit(format!(&quot;{:.2}%&quot;, progress * 100.0));&#10;            last_emit = std::time::Instant::now();&#10;        }&#10;    }&#10;    println!(&#10;        &quot;Downloaded {}&quot;,&#10;        file_name&#10;    );&#10;    Ok(file_name)&#10;}&#10;```&#10;" />
+                <option name="internalContent" value="Find potential problems in &#10;```rust&#10;#[tauri::command]&#10;async fn download(show: &amp;str) -&gt; Result&lt;String, String&gt;{&#10;    let link = get_link(show);&#10;    let json_data = get_json_data();&#10;    let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;    let show = &amp;shows[show];&#10;    let file_name = format!(&quot;{}/{}{}.{}&quot;, show.path, show.season, format!(&quot;{:0&gt;2}&quot;, show.episode.to_string()), link.split(&quot;.&quot;).last().unwrap().to_string());&#10;    //client logic&#10;    println!(&quot;starting {:?}&quot;, file_name);&#10;    let client = reqwest::Client::new();&#10;    println!(&quot;{:?}&quot;, client);&#10;    println!(&quot;{:?}&quot;, link);&#10;    let response = client.get(&amp;link).send().await.map_err(|e| e.to_string())?;&#10;    if !response.status().is_success() {&#10;        return Err(format!(&quot;Request failed: {}&quot;, response.status()));&#10;    } else {&#10;        println!(&quot;Sucsess: {:?}&quot;, response);&#10;    }&#10;    let size = response.content_length().unwrap_or(0);&#10;    let mut file = std::fs::File::create(&amp;file_name).map_err(|e| println!(&quot;Error {}&quot;, e.to_string()));&#10;    let mut stream = response.bytes_stream();&#10;    println!(&quot;Downloading {}...&quot;, file_name);&#10;    if let Some(parent) = std::path::Path::new(&amp;file_name).parent() {&#10;        std::fs::create_dir_all(parent).map_err(|e| e.to_string())?;&#10;    }&#10;    let mut last_emit = std::time::Instant::now();&#10;    let mut downloaded = 0;&#10;    while let Some(chunk) = &amp;stream.next().await {&#10;        let chunk_error_handler = chunk.as_ref().map_err(|e| e.to_string())?;&#10;        file.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;        downloaded += chunk_error_handler.len();&#10;        let mut progress = downloaded as f64 / size as f64;&#10;        if last_emit.elapsed().as_millis() &gt; 500 {&#10;            progress = downloaded as f64 / size as f64;&#10;            emit(format!(&quot;{:.2}%&quot;, progress * 100.0));&#10;            last_emit = std::time::Instant::now();&#10;        }&#10;    }&#10;    println!(&#10;        &quot;Downloaded {}&quot;,&#10;        file_name&#10;    );&#10;    Ok(file_name)&#10;}&#10;```&#10;" />
+              </SerializedChatMessage>
+              <SerializedChatMessage>
+                <option name="author" value="Assistant" />
+                <option name="uid" value="8f73c8d2-bc19-45e3-9633-339737a655bf" />
+                <option name="displayContent" value="Here are the main potential problems in that `download` function:&#10;&#10;### 1. `shows[show]` can panic&#10;```rust&#10;let show = &amp;shows[show];&#10;```&#10;Indexing a `HashMap` like this panics if the key is missing.  &#10;This is risky for invalid input or mismatched JSON data.&#10;&#10;### 2. `unwrap()` on JSON parsing can panic&#10;```rust&#10;let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;```&#10;If `shows.json` is malformed, the command will crash instead of returning an error.&#10;&#10;### 3. `file_name` construction may panic or create invalid paths&#10;```rust&#10;link.split(&quot;.&quot;).last().unwrap().to_string()&#10;```&#10;This assumes the URL always has a `.` and a usable extension. If not, `unwrap()` panics.&#10;&#10;Also:&#10;- `show.path` may not exist or may contain invalid path characters.&#10;- `show.season` and `show.episode` are used in the filename without validation.&#10;&#10;### 4. File creation error handling is broken&#10;```rust&#10;let mut file = std::fs::File::create(&amp;file_name).map_err(|e| println!(&quot;Error {}&quot;, e.to_string()));&#10;```&#10;This does not produce a usable `Result&lt;File, _&gt;`.  &#10;`map_err(|e| println!(...))` converts the error into `()`, so `file` is not a `File`. This is a compile-time/type issue in most cases.&#10;&#10;### 5. Parent directory creation happens after file creation&#10;```rust&#10;let mut file = std::fs::File::create(&amp;file_name)...&#10;if let Some(parent) = std::path::Path::new(&amp;file_name).parent() {&#10;    std::fs::create_dir_all(parent)...&#10;}&#10;```&#10;You try to create the file before ensuring the directory exists.  &#10;If the parent directory doesn’t exist, file creation fails first.&#10;&#10;### 6. Stream iteration is incorrect&#10;```rust&#10;while let Some(chunk) = &amp;stream.next().await {&#10;```&#10;`stream.next().await` returns an `Option&lt;Result&lt;Bytes, Error&gt;&gt;`.  &#10;Taking a reference here is suspicious and likely wrong; it can make pattern matching awkward or fail to compile depending on types/imports.&#10;&#10;Usually you want:&#10;```rust&#10;while let Some(chunk) = stream.next().await&#10;```&#10;&#10;### 7. `downloaded` and `size` can cause division by zero&#10;```rust&#10;let size = response.content_length().unwrap_or(0);&#10;let mut progress = downloaded as f64 / size as f64;&#10;```&#10;If `content_length()` is missing, `size` becomes `0`, and division by zero gives invalid progress (`inf`/`NaN`).&#10;&#10;### 8. Progress is only emitted every 500ms, but final progress may never be sent&#10;If the download finishes quickly or the loop ends before the 500ms threshold, the UI may never receive `100%`.&#10;&#10;### 9. `emit(...)` can panic internally&#10;From the context, `emit` calls:&#10;```rust&#10;app_handle.emit(&quot;BE&quot;, data).unwrap();&#10;```&#10;So if event emission fails, the whole command can panic.&#10;&#10;### 10. `println!(&quot;{:?}&quot;, response);` after consuming the response is okay only if not moved&#10;```rust&#10;println!(&quot;Sucsess: {:?}&quot;, response);&#10;```&#10;This is fine for logging, but keep in mind `response` is still later used for `content_length()` and `bytes_stream()`. If changed slightly, it could become a move/borrow issue. Also the spelling `&quot;Sucsess&quot;` is just a typo.&#10;&#10;### 11. `size` may not reflect actual downloaded bytes&#10;Some servers use chunked transfer encoding and won’t provide `Content-Length`. Your progress becomes unreliable in that case.&#10;&#10;### 12. Error handling is inconsistent&#10;You mix:&#10;- `unwrap()`&#10;- `expect(...)`&#10;- `map_err(...)`&#10;- direct indexing&#10;&#10;This makes the function fail unpredictably instead of returning clean `Result&lt;String, String&gt;` errors.&#10;&#10;### 13. `format!(&quot;{:0&gt;2}&quot;, show.episode.to_string())` is awkward&#10;This works, but it’s unnecessary to convert to string first. It’s not a bug, just clunky and easy to misuse.&#10;&#10;---&#10;&#10;## Biggest practical risks&#10;If I had to prioritize, the most serious issues are:&#10;&#10;1. **Panics from `unwrap()` / indexing**&#10;2. **File creation order bug**&#10;3. **Broken `map_err(|e| println!(...))`**&#10;4. **Possible division by zero in progress**&#10;5. **Potential invalid filename/path issues**&#10;&#10;If you want, I can rewrite this function into a safer version that returns proper errors and handles streaming/download progress cleanly." />
+                <option name="internalContent" value="Here are the main potential problems in that `download` function:&#10;&#10;### 1. `shows[show]` can panic&#10;```rust&#10;let show = &amp;shows[show];&#10;```&#10;Indexing a `HashMap` like this panics if the key is missing.  &#10;This is risky for invalid input or mismatched JSON data.&#10;&#10;### 2. `unwrap()` on JSON parsing can panic&#10;```rust&#10;let shows: HashMap&lt;String, Show&gt; = serde_json::from_str(&amp;json_data).unwrap();&#10;```&#10;If `shows.json` is malformed, the command will crash instead of returning an error.&#10;&#10;### 3. `file_name` construction may panic or create invalid paths&#10;```rust&#10;link.split(&quot;.&quot;).last().unwrap().to_string()&#10;```&#10;This assumes the URL always has a `.` and a usable extension. If not, `unwrap()` panics.&#10;&#10;Also:&#10;- `show.path` may not exist or may contain invalid path characters.&#10;- `show.season` and `show.episode` are used in the filename without validation.&#10;&#10;### 4. File creation error handling is broken&#10;```rust&#10;let mut file = std::fs::File::create(&amp;file_name).map_err(|e| println!(&quot;Error {}&quot;, e.to_string()));&#10;```&#10;This does not produce a usable `Result&lt;File, _&gt;`.  &#10;`map_err(|e| println!(...))` converts the error into `()`, so `file` is not a `File`. This is a compile-time/type issue in most cases.&#10;&#10;### 5. Parent directory creation happens after file creation&#10;```rust&#10;let mut file = std::fs::File::create(&amp;file_name)...&#10;if let Some(parent) = std::path::Path::new(&amp;file_name).parent() {&#10;    std::fs::create_dir_all(parent)...&#10;}&#10;```&#10;You try to create the file before ensuring the directory exists.  &#10;If the parent directory doesn’t exist, file creation fails first.&#10;&#10;### 6. Stream iteration is incorrect&#10;```rust&#10;while let Some(chunk) = &amp;stream.next().await {&#10;```&#10;`stream.next().await` returns an `Option&lt;Result&lt;Bytes, Error&gt;&gt;`.  &#10;Taking a reference here is suspicious and likely wrong; it can make pattern matching awkward or fail to compile depending on types/imports.&#10;&#10;Usually you want:&#10;```rust&#10;while let Some(chunk) = stream.next().await&#10;```&#10;&#10;### 7. `downloaded` and `size` can cause division by zero&#10;```rust&#10;let size = response.content_length().unwrap_or(0);&#10;let mut progress = downloaded as f64 / size as f64;&#10;```&#10;If `content_length()` is missing, `size` becomes `0`, and division by zero gives invalid progress (`inf`/`NaN`).&#10;&#10;### 8. Progress is only emitted every 500ms, but final progress may never be sent&#10;If the download finishes quickly or the loop ends before the 500ms threshold, the UI may never receive `100%`.&#10;&#10;### 9. `emit(...)` can panic internally&#10;From the context, `emit` calls:&#10;```rust&#10;app_handle.emit(&quot;BE&quot;, data).unwrap();&#10;```&#10;So if event emission fails, the whole command can panic.&#10;&#10;### 10. `println!(&quot;{:?}&quot;, response);` after consuming the response is okay only if not moved&#10;```rust&#10;println!(&quot;Sucsess: {:?}&quot;, response);&#10;```&#10;This is fine for logging, but keep in mind `response` is still later used for `content_length()` and `bytes_stream()`. If changed slightly, it could become a move/borrow issue. Also the spelling `&quot;Sucsess&quot;` is just a typo.&#10;&#10;### 11. `size` may not reflect actual downloaded bytes&#10;Some servers use chunked transfer encoding and won’t provide `Content-Length`. Your progress becomes unreliable in that case.&#10;&#10;### 12. Error handling is inconsistent&#10;You mix:&#10;- `unwrap()`&#10;- `expect(...)`&#10;- `map_err(...)`&#10;- direct indexing&#10;&#10;This makes the function fail unpredictably instead of returning clean `Result&lt;String, String&gt;` errors.&#10;&#10;### 13. `format!(&quot;{:0&gt;2}&quot;, show.episode.to_string())` is awkward&#10;This works, but it’s unnecessary to convert to string first. It’s not a bug, just clunky and easy to misuse.&#10;&#10;---&#10;&#10;## Biggest practical risks&#10;If I had to prioritize, the most serious issues are:&#10;&#10;1. **Panics from `unwrap()` / indexing**&#10;2. **File creation order bug**&#10;3. **Broken `map_err(|e| println!(...))`**&#10;4. **Possible division by zero in progress**&#10;5. **Potential invalid filename/path issues**&#10;&#10;If you want, I can rewrite this function into a safer version that returns proper errors and handles streaming/download progress cleanly." />
+              </SerializedChatMessage>
+            </list>
+          </option>
+          <option name="modifiedAt" value="1776808767536" />
+          <option name="statisticInformation">
+            <ChatStatisticInformation>
+              <option name="sourceActionType" value="FIND_PROBLEMS_INTENTION" />
+              <option name="timestamp" value="1776808767536" />
+            </ChatStatisticInformation>
+          </option>
+          <option name="title">
+            <SerializedChatTitle>
+              <option name="custom" value="true" />
+              <option name="text" value="Rust Code Review: Download Function Issues" />
+            </SerializedChatTitle>
+          </option>
+          <option name="uid" value="1513f91d-fa6b-4ffa-ba9e-d9a79a7f14e3" />
+        </SerializedChat>
+        <SerializedChat>
+          <option name="chatContext">
+            <SerializedChatContext />
+          </option>
+          <option name="chatModelId" value="chat_mode" />
+          <option name="messages">
+            <list>
+              <SerializedChatMessage>
+                <option name="uid" value="UUID(uuid=176b47f5-6c04-4ea7-8d62-92047dcf5099)" />
+                <option name="displayContent" value="Please help me understand what the problem is and try to fix the code.&#10;Console output:&#10;```&#10;error[E0277]: `?` couldn't convert the error to `std::string::String`&#10;  --&gt; src/lib.rs:81:14&#10;   |&#10;81 |         &amp;file?.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;   |          ----^ the trait `From&lt;()&gt;` is not implemented for `std::string::String`&#10;   |          |&#10;   |          this can't be annotated with `?` because it has type `Result&lt;_, ()&gt;`&#10;   |&#10;   = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait&#10;   = help: the following other types implement trait `From&lt;T&gt;`:&#10;             `std::string::String` implements `From&lt;&amp;mut str&gt;`&#10;             `std::string::String` implements `From&lt;&amp;std::string::String&gt;`&#10;             `std::string::String` implements `From&lt;&amp;str&gt;`&#10;             `std::string::String` implements `From&lt;&amp;tendril::tendril::Tendril&lt;tendril::fmt::UTF8, A&gt;&gt;`&#10;             `std::string::String` implements `From&lt;AssetKey&gt;`&#10;             `std::string::String` implements `From&lt;Box&lt;str&gt;&gt;`&#10;             `std::string::String` implements `From&lt;Cow&lt;'_, str&gt;&gt;`&#10;             `std::string::String` implements `From&lt;char&gt;`&#10;           and 15 others&#10;&#10;warning: unused import: `tokio::io::AsyncWriteExt`&#10;  --&gt; src/lib.rs:10:5&#10;   |&#10;10 | use tokio::io::AsyncWriteExt;&#10;   |     ^^^^^^^^^^^^^^^^^^^^^^^^&#10;   |&#10;   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default&#10;&#10;For more information about this error, try `rustc --explain E0277`.&#10;warning: `new-pirate-app` (lib) generated 1 warning&#10;```&#10;" />
+                <option name="internalContent" value="As a helpful assistant with expertise in code debugging, your objective is to identify the roots of runtime problems by analyzing console logs and providing general solutions to fix the issues. When assisting users, follow these rules:&#10;&#10;1. Always be helpful and professional.&#10;2. Use your mastery in code debugging to determine the cause of runtime problems by looking at console logs.&#10;3. Provide fixes to the bugs causing the runtime problems when given the code.&#10;4. Ensure that your solutions are not temporary &quot;duct tape&quot; fixes, but instead, provide long-term solutions.&#10;5. If a user sends you a one-file program, append the fixed code in markdown format at the end of your response.&#10;This code will be extracted using re.findall(r&quot;`{{3}}(\w*)\n([\S\s]+?)\n`{{3}}&quot;, model_response)&#10;so adhere to this formatting strictly.&#10;6. If you can fix the problem strictly by modifying the code, do so. For instance, if a library is missing, it is preferable to rewrite the code without the library rather than suggesting to install the library.&#10;7. Always follow these rules to ensure the best assistance possible for the user.&#10;&#10;Now, consider this user request:&#10;&#10;Please help me understand what the problem is and try to fix the code. Here's the console output:&#10;Console output:&#10;```&#10;error[E0277]: `?` couldn't convert the error to `std::string::String`&#10;  --&gt; src/lib.rs:81:14&#10;   |&#10;81 |         &amp;file?.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;   |          ----^ the trait `From&lt;()&gt;` is not implemented for `std::string::String`&#10;   |          |&#10;   |          this can't be annotated with `?` because it has type `Result&lt;_, ()&gt;`&#10;   |&#10;   = note: the question mark operation (`?`) implicitly performs a conversion on the error value using the `From` trait&#10;   = help: the following other types implement trait `From&lt;T&gt;`:&#10;             `std::string::String` implements `From&lt;&amp;mut str&gt;`&#10;             `std::string::String` implements `From&lt;&amp;std::string::String&gt;`&#10;             `std::string::String` implements `From&lt;&amp;str&gt;`&#10;             `std::string::String` implements `From&lt;&amp;tendril::tendril::Tendril&lt;tendril::fmt::UTF8, A&gt;&gt;`&#10;             `std::string::String` implements `From&lt;AssetKey&gt;`&#10;             `std::string::String` implements `From&lt;Box&lt;str&gt;&gt;`&#10;             `std::string::String` implements `From&lt;Cow&lt;'_, str&gt;&gt;`&#10;             `std::string::String` implements `From&lt;char&gt;`&#10;           and 15 others&#10;&#10;warning: unused import: `tokio::io::AsyncWriteExt`&#10;  --&gt; src/lib.rs:10:5&#10;   |&#10;10 | use tokio::io::AsyncWriteExt;&#10;   |     ^^^^^^^^^^^^^^^^^^^^^^^^&#10;   |&#10;   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default&#10;&#10;For more information about this error, try `rustc --explain E0277`.&#10;warning: `new-pirate-app` (lib) generated 1 warning&#10;```&#10;&#10;&#10;Provide a helpful response that addresses the user's concerns, adheres to the rules, and offers a solution for the runtime problem." />
+              </SerializedChatMessage>
+              <SerializedChatMessage>
+                <option name="author" value="Assistant" />
+                <option name="uid" value="7995682f-54ea-408e-8060-80c087bcc7a7" />
+                <option name="displayContent" value="The core problem is this line:&#10;&#10;```rust&#10;&amp;file?.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;```&#10;&#10;## What’s going wrong&#10;&#10;1. **`file?` is being used in a way that produces a type mismatch**&#10;   - `?` can only be used when the error type can be converted into your function’s return error type.&#10;   - Your compiler says the error is `()`, but your function expects `String`, so Rust can’t convert `()` into `String`.&#10;&#10;2. **`write_all` is being handled incorrectly**&#10;   - `write_all(...)` already returns a `Result`.&#10;   - Chaining `.map_err(...).expect(...)` defeats proper error handling.&#10;   - You should use `?` after converting the error into a `String`.&#10;&#10;3. **The `&amp;` in front of `file?` is also suspicious**&#10;   - You generally want to first get the file value, then call `write_all` on it.&#10;   - For async writing, the file usually needs to be mutable: `let mut file = ...`.&#10;&#10;4. **Unused import warning**&#10;   - `tokio::io::AsyncWriteExt` is only needed if you’re actually using async `write_all`.&#10;   - If you switch to proper async writing, keep it.&#10;   - If not, remove the import.&#10;&#10;## Long-term fix&#10;&#10;Use clear error propagation:&#10;- extract the file first,&#10;- make it mutable,&#10;- call `write_all(...).await`,&#10;- convert errors with `map_err(...)`,&#10;- then propagate with `?`.&#10;&#10;That gives you correct Rust error handling and avoids mixing `expect()` with `?`.&#10;&#10;## Fixed code pattern&#10;&#10;```rust&#10;async fn write_chunk(mut file: tokio::fs::File, chunk_error_handler: &amp;[u8]) -&gt; Result&lt;(), String&gt; {&#10;    file.write_all(chunk_error_handler)&#10;        .await&#10;        .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;    Ok(())&#10;}&#10;```&#10;&#10;If your code currently has something like `let file = ...;`, change it to:&#10;&#10;```rust&#10;let mut file = file.map_err(|_| &quot;Failed to open file&quot;.to_string())?;&#10;file.write_all(&amp;chunk_error_handler)&#10;    .await&#10;    .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;```&#10;&#10;## About the warning&#10;&#10;If you use async file writing, this import is correct:&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;```&#10;&#10;If you are not doing async writes anymore, remove it.&#10;&#10;## Summary&#10;&#10;- The real bug is improper use of `?` on a `Result&lt;_, ()&gt;` where your function returns `Result&lt;_, String&gt;`.&#10;- Replace the chained `file?.write_all(...).map_err(...).expect(...)` with proper `map_err(...)?`.&#10;- Make the file mutable and call `await` on `write_all`.&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;&#10;// ... existing code ...&#10;&#10;async fn write_chunk(mut file: tokio::fs::File, chunk_error_handler: &amp;[u8]) -&gt; Result&lt;(), String&gt; {&#10;    file.write_all(chunk_error_handler)&#10;        .await&#10;        .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;    Ok(())&#10;}&#10;&#10;// ... existing code ...&#10;```&#10;&#10;If you want, I can also help rewrite the exact `src/lib.rs` section if you paste the file contents around line 81." />
+                <option name="internalContent" value="The core problem is this line:&#10;&#10;```rust&#10;&amp;file?.write_all(&amp;chunk_error_handler).map_err(|e| format!(&quot;Write failed: {}&quot;, e)).expect(&quot;error while writing&quot;);&#10;```&#10;&#10;## What’s going wrong&#10;&#10;1. **`file?` is being used in a way that produces a type mismatch**&#10;   - `?` can only be used when the error type can be converted into your function’s return error type.&#10;   - Your compiler says the error is `()`, but your function expects `String`, so Rust can’t convert `()` into `String`.&#10;&#10;2. **`write_all` is being handled incorrectly**&#10;   - `write_all(...)` already returns a `Result`.&#10;   - Chaining `.map_err(...).expect(...)` defeats proper error handling.&#10;   - You should use `?` after converting the error into a `String`.&#10;&#10;3. **The `&amp;` in front of `file?` is also suspicious**&#10;   - You generally want to first get the file value, then call `write_all` on it.&#10;   - For async writing, the file usually needs to be mutable: `let mut file = ...`.&#10;&#10;4. **Unused import warning**&#10;   - `tokio::io::AsyncWriteExt` is only needed if you’re actually using async `write_all`.&#10;   - If you switch to proper async writing, keep it.&#10;   - If not, remove the import.&#10;&#10;## Long-term fix&#10;&#10;Use clear error propagation:&#10;- extract the file first,&#10;- make it mutable,&#10;- call `write_all(...).await`,&#10;- convert errors with `map_err(...)`,&#10;- then propagate with `?`.&#10;&#10;That gives you correct Rust error handling and avoids mixing `expect()` with `?`.&#10;&#10;## Fixed code pattern&#10;&#10;```rust&#10;async fn write_chunk(mut file: tokio::fs::File, chunk_error_handler: &amp;[u8]) -&gt; Result&lt;(), String&gt; {&#10;    file.write_all(chunk_error_handler)&#10;        .await&#10;        .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;    Ok(())&#10;}&#10;```&#10;&#10;If your code currently has something like `let file = ...;`, change it to:&#10;&#10;```rust&#10;let mut file = file.map_err(|_| &quot;Failed to open file&quot;.to_string())?;&#10;file.write_all(&amp;chunk_error_handler)&#10;    .await&#10;    .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;```&#10;&#10;## About the warning&#10;&#10;If you use async file writing, this import is correct:&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;```&#10;&#10;If you are not doing async writes anymore, remove it.&#10;&#10;## Summary&#10;&#10;- The real bug is improper use of `?` on a `Result&lt;_, ()&gt;` where your function returns `Result&lt;_, String&gt;`.&#10;- Replace the chained `file?.write_all(...).map_err(...).expect(...)` with proper `map_err(...)?`.&#10;- Make the file mutable and call `await` on `write_all`.&#10;&#10;```rust&#10;use tokio::io::AsyncWriteExt;&#10;&#10;// ... existing code ...&#10;&#10;async fn write_chunk(mut file: tokio::fs::File, chunk_error_handler: &amp;[u8]) -&gt; Result&lt;(), String&gt; {&#10;    file.write_all(chunk_error_handler)&#10;        .await&#10;        .map_err(|e| format!(&quot;Write failed: {}&quot;, e))?;&#10;    Ok(())&#10;}&#10;&#10;// ... existing code ...&#10;```&#10;&#10;If you want, I can also help rewrite the exact `src/lib.rs` section if you paste the file contents around line 81." />
+              </SerializedChatMessage>
+            </list>
+          </option>
+          <option name="modifiedAt" value="1776961885522" />
+          <option name="statisticInformation">
+            <ChatStatisticInformation>
+              <option name="sourceActionType" value="RUNTIME_ERROR_EXPLANATION" />
+              <option name="timestamp" value="1776961885522" />
+            </ChatStatisticInformation>
+          </option>
+          <option name="title">
+            <SerializedChatTitle>
+              <option name="custom" value="true" />
+              <option name="text" value="Rust Error Handling with Write Method" />
+            </SerializedChatTitle>
+          </option>
+          <option name="uid" value="9621caef-8437-4ab3-b635-8e9db90e1289" />
+        </SerializedChat>
+      </list>
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf ideFingerprint="1zv04qpv37ej9" SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src-tauri/src/lib.rs" file-id="15832" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="283">
+              <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"lib.rs","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,45,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,85,114,108,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,-118,1,10,-121,1,106,97,114,58,102,105,108,101,58,47,104,111,109,101,47,109,105,107,97,47,46,108,111,99,97,108,47,115,104,97,114,101,47,74,101,116,66,114,97,105,110,115,47,84,111,111,108,98,111,120,47,97,112,112,115,47,114,117,115,116,114,111,118,101,114,47,112,108,117,103,105,110,115,47,105,110,116,101,108,108,105,106,45,114,117,115,116,47,108,105,98,47,105,110,116,101,108,108,105,106,45,114,117,115,116,46,106,97,114,33,47,105,99,111,110,115,47,101,120,112,117,105,47,114,117,115,116,70,105,108,101,46,115,118,103]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/resources/shows.json" file-id="155620" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="22">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"resources/shows.json","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-55,-15,-115,-58,-6,-1,-1,-1,-1,1,48,2]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src/routes/+page.svelte" file-id="15812" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="398">
+              <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+              <folding>
+                <element signature="e#20#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"+page.svelte","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,61,10,21,105,99,111,110,115,47,100,101,115,97,116,117,114,97,116,101,100,46,115,118,103,26,23,100,101,118,46,98,108,97,99,104,117,116,46,115,118,101,108,116,101,46,108,97,110,103,40,-93,-63,-32,-125,-4,-1,-1,-1,-1,1,48,0]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/.svelte-kit/tsconfig.json" file-id="140073" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true" />
+        </entry>
+        <tab><![CDATA[{"tabTitle":"tsconfig.json","foregroundColor":-5539481,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"ab7967"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-55,-15,-115,-58,-6,-1,-1,-1,-1,1,48,2]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/target/debug/shows.json" file-id="139948" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="44">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"debug/shows.json","foregroundColor":-5539481,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"ab7967"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-55,-15,-115,-58,-6,-1,-1,-1,-1,1,48,2]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/tauri.conf.json" file-id="15823" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="564">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"tauri.conf.json","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-55,-15,-115,-58,-6,-1,-1,-1,-1,1,48,2]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/Cargo.toml" file-id="15828" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="110">
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"Cargo.toml","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,45,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,85,114,108,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,-121,1,10,-124,1,106,97,114,58,102,105,108,101,58,47,104,111,109,101,47,109,105,107,97,47,46,108,111,99,97,108,47,115,104,97,114,101,47,74,101,116,66,114,97,105,110,115,47,84,111,111,108,98,111,120,47,97,112,112,115,47,114,117,115,116,114,111,118,101,114,47,112,108,117,103,105,110,115,47,105,110,116,101,108,108,105,106,45,114,117,115,116,47,108,105,98,47,105,110,116,101,108,108,105,106,45,114,117,115,116,46,106,97,114,33,47,105,99,111,110,115,47,101,120,112,117,105,47,99,97,114,103,111,46,115,118,103]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/gen/android/app/src/main/AndroidManifest.xml" file-id="152657" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="218">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"AndroidManifest.xml","foregroundColor":-559511,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"f77669"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,66,10,17,102,105,108,101,84,121,112,101,115,47,120,109,108,46,115,118,103,18,23,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,120,109,108,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-33,-3,-24,-123,1,48,0]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/src-tauri/capabilities/default.json" file-id="15849" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="330">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"default.json","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,106,115,111,110,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-55,-15,-115,-58,-6,-1,-1,-1,-1,1,48,2]}]]></tab>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary"><![CDATA[{
+  "data": {
+    "PLAIN_TEXT": {
+      "usageCount": 1,
+      "lastUsed": 1776342527318
+    },
+    "Rust": {
+      "usageCount": 17,
+      "lastUsed": 1777770587462
+    },
+    "JSON": {
+      "usageCount": 43,
+      "lastUsed": 1777774135105
+    },
+    "Markdown": {
+      "usageCount": 1,
+      "lastUsed": 1776342324594
+    },
+    "Svelte": {
+      "usageCount": 18,
+      "lastUsed": 1777770587596
+    },
+    "HTML": {
+      "usageCount": 7,
+      "lastUsed": 1776961532712
+    },
+    "tsconfig": {
+      "usageCount": 6,
+      "lastUsed": 1777770587497
+    },
+    "WebPreview": {
+      "usageCount": 1,
+      "lastUsed": 1777765827986
+    },
+    "TOML": {
+      "usageCount": 3,
+      "lastUsed": 1777770587144
+    },
+    "XML": {
+      "usageCount": 1,
+      "lastUsed": 1777770653965
+    }
+  }
+}]]></component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find />
+      <find>on:click</find>
+      <find>insert</find>
+      <find>scrap</find>
+      <find>download</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>onclick</replace>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="GitBranchesPopupTreeState">
+    <expand>
+      <path>
+        <item name="TreeRoot" type="c693935c:GitBranchesTreeModel$TreeRoot" />
+        <item name="LOCAL" type="6e158aa5:GitBranchType$LOCAL" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="GitSEFilterConfiguration">{}</component>
+  <component name="IdeDocumentHistory"><![CDATA[{
+  "changedPaths": [
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/shows.json",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/target/debug/shows.json",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/Cargo.toml",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/capabilities/default.json",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/gen/android/app/src/main/AndroidManifest.xml",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src/routes/+page.svelte",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/src/lib.rs",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/tauri.conf.json",
+    "/home/mika/RustroverProjects/pirate-app-tauri/src-tauri/resources/shows.json"
+  ]
+}]]></component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JunieThinkMoreToggleService">
+    <option name="sessions">
+      <map>
+        <entry key="0000beff-d413-449b-94e8-48474c6c1131" value="false" />
+        <entry key="1513f91d-fa6b-4ffa-ba9e-d9a79a7f14e3" value="false" />
+        <entry key="34acb610-f022-47ec-b049-c97db0057434" value="false" />
+        <entry key="4ef07075-4843-4b60-8afe-5c9dc75e1fb1" value="false" />
+        <entry key="5c3820f8-58d4-4718-bd63-1bbe42cbcf77" value="false" />
+        <entry key="5dd8920d-db57-42bb-8470-b66f656ad121" value="false" />
+        <entry key="74461d98-e68b-445c-8dfa-cda804c6de0c" value="false" />
+        <entry key="7c30e302-bbe0-4116-9b91-7999b39293dc" value="false" />
+        <entry key="819cbf74-6d07-46d9-a70e-00ec5f78bf15" value="false" />
+        <entry key="83df6295-cdec-414f-855e-8546b0b61209" value="false" />
+        <entry key="9621caef-8437-4ab3-b635-8e9db90e1289" value="false" />
+        <entry key="b14b7cb5-3ff9-4a00-b74b-5b14dde25fcd" value="false" />
+        <entry key="d091b3f8-080e-40c9-8625-1b8f28d972b5" value="false" />
+        <entry key="dff8bb88-60f0-4c4c-a7ed-f5ef62ad44a2" value="false" />
+        <entry key="e22879f4-1563-41bb-88d7-e6fa7b7788ff" value="false" />
+        <entry key="e8809138-ee5e-4306-885a-af9c1a6037d2" value="false" />
+        <entry key="ee0c7067-62c8-4ed2-885b-6952948a8212" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="HTML">
+      <summary usageCount="7" lastUsage="1776961532712" />
+    </language>
+    <language id="JSON">
+      <summary usageCount="49" lastUsage="1777774135105" />
+    </language>
+    <language id="Markdown">
+      <summary usageCount="1" lastUsage="1776342324594" />
+    </language>
+    <language id="Rust">
+      <summary usageCount="17" lastUsage="1777770587462" />
+    </language>
+    <language id="SvelteHTML">
+      <summary usageCount="18" lastUsage="1777770587596" />
+    </language>
+    <language id="TEXT">
+      <summary usageCount="1" lastUsage="1776342527318" />
+    </language>
+    <language id="TOML">
+      <summary usageCount="3" lastUsage="1777770587149" />
+    </language>
+    <language id="XML">
+      <summary usageCount="1" lastUsage="1777770653965" />
+    </language>
+  </component>
+  <component name="ProjectRoots">
+    <project-root url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pirate-app-tauri" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pirate-app-tauri" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pirate-app-tauri" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/capabilities}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pirate-app-tauri" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/resources}" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+          <presentation>
+            <attributes />
+            <data iconPath="expui/toolwindows/project.svg" iconPlugin="com.intellij" isLeaf="false" text="pirate-app-tauri" />
+            <item name="pirate-app-tauri" type="b2602c69:ProjectViewProjectNode" />
+            <presentation>
+              <attributes>
+                <map>
+                  <entry key="filePath" value="$PROJECT_DIR$" />
+                </map>
+              </attributes>
+              <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="pirate-app-tauri" />
+              <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri}" type="462c0819:PsiDirectoryNode" />
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/.svelte-kit" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text=".svelte-kit" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/.svelte-kit}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/.vscode" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text=".vscode" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/.vscode}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/build" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="build" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/build}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/node_modules" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="node_modules" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/node_modules}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/src" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="src" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/src-tauri" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="src-tauri" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri}" type="462c0819:PsiDirectoryNode" />
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/capabilities" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="capabilities" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/capabilities}" type="462c0819:PsiDirectoryNode" />
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/src-tauri/capabilities/default.json" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="default.json" />
+                    <item name="default.json" type="ab9368bb:PsiFileNode" />
+                  </presentation>
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/gen" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="gen" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/gen}" type="462c0819:PsiDirectoryNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/icons" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="icons" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/icons}" type="462c0819:PsiDirectoryNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/resources" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="resources" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/resources}" type="462c0819:PsiDirectoryNode" />
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/src-tauri/resources/shows.json" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="shows.json" />
+                    <item name="shows.json" type="ab9368bb:PsiFileNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/src-tauri/resources/shows.json.bak" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/fileTypes/text.svg" iconPlugin="com.intellij" isLeaf="true" text="shows.json.bak" />
+                    <item name="shows.json.bak" type="ab9368bb:PsiFileNode" />
+                  </presentation>
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/src" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/sourceRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="src" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/src}" type="462c0819:PsiDirectoryNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/target" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="target" />
+                  <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/src-tauri/target}" type="462c0819:PsiDirectoryNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/.gitignore" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/fileTypes/ignored.svg" iconPlugin="com.intellij" isLeaf="true" text=".gitignore" />
+                  <item name=".gitignore" type="ab9368bb:PsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/build.rs" />
+                    </map>
+                  </attributes>
+                  <data iconPath="icons/expui/rustBuild.svg" iconPlugin="com.jetbrains.rust" isLeaf="true" text="build.rs" />
+                  <item name="build.rs" type="f3e56494:RsPsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/Cargo.lock" />
+                    </map>
+                  </attributes>
+                  <data iconPath="icons/expui/cargoLock.svg" iconPlugin="com.jetbrains.rust" isLeaf="true" text="Cargo.lock" />
+                  <item name="Cargo.lock" type="ab9368bb:PsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/Cargo.toml" />
+                    </map>
+                  </attributes>
+                  <data iconPath="icons/expui/cargo.svg" iconPlugin="com.jetbrains.rust" isLeaf="true" text="Cargo.toml" />
+                  <item name="Cargo.toml" type="ab9368bb:PsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/crash.log" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/fileTypes/text.svg" iconPlugin="com.intellij" isLeaf="true" text="crash.log" />
+                  <item name="crash.log" type="ab9368bb:PsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/src-tauri/tauri.conf.json" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="tauri.conf.json" />
+                  <item name="tauri.conf.json" type="ab9368bb:PsiFileNode" />
+                </presentation>
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/static" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="static" />
+                <item name="dir{file:///home/mika/RustroverProjects/pirate-app-tauri/static}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/.gitignore" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/ignored.svg" iconPlugin="com.intellij" isLeaf="true" text=".gitignore" />
+                <item name=".gitignore" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/bun.lock" />
+                  </map>
+                </attributes>
+                <data iconPath="icons/bun.svg" iconPlugin="intellij.javascript.bun" isLeaf="true" text="bun.lock" />
+                <item name="bun.lock" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/package.json" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="package.json" />
+                <item name="package.json" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/package-lock.json" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="package-lock.json" />
+                <item name="package-lock.json" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/README.md" />
+                  </map>
+                </attributes>
+                <data iconPath="icons/expui/markdown.svg" iconPlugin="org.intellij.plugins.markdown" isLeaf="true" text="README.md" />
+                <item name="README.md" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/svelte.config.js" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/javaScript.svg" iconPlugin="com.intellij" isLeaf="true" text="svelte.config.js" />
+                <item name="svelte.config.js" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/tsconfig.json" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text="tsconfig.json" />
+                <item name="tsconfig.json" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/vite.config.js" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/javaScript.svg" iconPlugin="com.intellij" isLeaf="true" text="vite.config.js" />
+                <item name="vite.config.js" type="ab9368bb:PsiFileNode" />
+              </presentation>
+            </presentation>
+            <presentation>
+              <attributes />
+              <data iconPath="expui/nodes/library.svg" iconPlugin="com.intellij" isLeaf="false" text="External Libraries" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </presentation>
+            <presentation>
+              <attributes />
+              <data iconPath="expui/fileTypes/scratches.svg" iconPlugin="com.intellij" isLeaf="false" text="Scratches and Consoles" />
+              <item name="Scratches and Consoles" type="b85a3e1f:ScratchTreeStructureProvider$MyProjectNode" />
+            </presentation>
+          </presentation>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="QueryFileSettings">
+    <option name="projectQueriesDirectory" value="$PROJECT_DIR$/.idea/queries" />
+  </component>
+  <component name="TerminalTabsStorage">
+    <option name="tabs">
+      <TerminalSessionPersistedTab name="Local" workingDirectory="$PROJECT_DIR$/src-tauri" processType="SHELL">
+        <option name="shellCommand">
+          <option value="/usr/bin/zsh" />
+          <option value="-i" />
+        </option>
+        <option name="envVariables">
+          <map />
+        </option>
+      </TerminalSessionPersistedTab>
+    </option>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="50446000" />
+  </component>
+  <component name="ToolWindowManager">
+    <layoutV2>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15644655" />
+      <window_info id="Commit" order="1" weight="0.15644655" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Pull Requests" order="3" weight="0.3299266" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info active="true" anchor="bottom" x="250" y="827" width="590" height="373" id="Problems View" order="2" type="FLOATING" weight="0.314438" />
+      <window_info anchor="bottom" x="504" y="570" width="1908" height="307" id="Terminal" order="3" weight="0.314438" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.314438" />
+      <window_info anchor="bottom" id="Build" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" show_stripe_button="false" weight="0.32994187" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.2465933" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="5" weight="0.2" />
+      <window_info anchor="right" id="RustCargo" order="6" weight="0.3299266" />
+      <window_info anchor="right" id="ElectroJunToolWindow" order="7" />
+      <unified_weights bottom="0.32994187" left="0.15644655" right="0.2465933" />
+    </layoutV2>
+    <recentWindows>
+      <value>Project</value>
+      <value>Find</value>
+      <value>Terminal</value>
+      <value>Commit</value>
+      <value>Problems View</value>
+      <value>Run</value>
+      <value>AIAssistant</value>
+      <value>RustCargo</value>
+      <value>Pull Requests</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="554" y="172" width="800" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1777774222007">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="554" y="172" width="800" height="712" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1777774222007" />
+    <state x="687" y="401" key="#org.rust.ide.typing.paste.CratesImportDialog" timestamp="1776471431772">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="687" y="401" key="#org.rust.ide.typing.paste.CratesImportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1776471431772" />
+    <state width="1826" height="277" key="GridCell.Tab.0.bottom" timestamp="1777763316711">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1826" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1777763316711" />
+    <state width="1826" height="277" key="GridCell.Tab.0.center" timestamp="1777763316710">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1826" height="277" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1777763316710" />
+    <state width="1826" height="277" key="GridCell.Tab.0.left" timestamp="1777763316709">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1826" height="277" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1777763316709" />
+    <state width="1826" height="277" key="GridCell.Tab.0.right" timestamp="1777763316710">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1826" height="277" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1777763316710" />
+    <state x="454" y="166" width="1518" height="966" key="MergeDialog" timestamp="1776961865264">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="454" y="166" width="1518" height="966" key="MergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1776961865264" />
+    <state x="764" y="236" key="RollbackChangesDialog" timestamp="1777767601617">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="764" y="236" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1777767601617" />
+    <state x="463" y="147" key="SettingsEditor" timestamp="1777763694860">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="463" y="147" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1777763694860" />
+    <state x="554" y="246" key="Vcs.Push.Dialog.v2" timestamp="1777335126084">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="554" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1777335126084" />
+    <state x="653" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1777763291077">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="653" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1777763291077" />
+    <state x="617" y="213" width="681" height="721" key="search.everywhere.popup" timestamp="1777774633669">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="617" y="213" width="681" height="721" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1777774633669" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$USER_HOME$/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.2/src/error.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/shows.json" />
+    <entry file="file://$PROJECT_DIR$/src/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/target/debug/shows.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.svelte-kit/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/gen/android/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/+page.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding>
+            <element signature="e#20#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/capabilities/default.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/tauri.conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/resources/shows.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-tauri/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

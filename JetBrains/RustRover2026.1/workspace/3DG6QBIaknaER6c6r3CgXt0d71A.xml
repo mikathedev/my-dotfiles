@@ -1,0 +1,446 @@
+<project version="4">
+  <component name="AgentBraveModeToggleService">
+    <option name="sessions">
+      <map>
+        <entry key="40cd46f3-aefa-42b4-b65c-930578e38a55" value="false" />
+        <entry key="5bca80c6-e772-448c-9622-99c6979bbe1b" value="false" />
+        <entry key="5e2ffd84-163d-461a-9aa7-888284d19772" value="false" />
+        <entry key="6309aa7a-94a3-4094-8485-339e6cb80348" value="false" />
+        <entry key="6473f48b-cc35-4813-82af-e6e384db5be0" value="false" />
+        <entry key="90be3389-2f31-47f9-b398-b3164e9c0d60" value="false" />
+        <entry key="a29ca506-9c7c-409c-a745-b79809993d30" value="false" />
+        <entry key="c160c66a-8a72-429e-843f-dc84a75437cd" value="false" />
+        <entry key="c31f4884-f8aa-47a3-8031-acd75aac3c38" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="BookmarksManager">
+    <option name="groups">
+      <GroupState>
+        <option name="name" value="Clipboard-Manager" />
+      </GroupState>
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf ideFingerprint="31c38dkmzohja" SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.rs" file-id="155629" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="686">
+              <caret line="144" column="89" lean-forward="true" selection-start-line="144" selection-start-column="89" selection-end-line="144" selection-end-column="89" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"main.rs","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,45,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,85,114,108,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,-118,1,10,-121,1,106,97,114,58,102,105,108,101,58,47,104,111,109,101,47,109,105,107,97,47,46,108,111,99,97,108,47,115,104,97,114,101,47,74,101,116,66,114,97,105,110,115,47,84,111,111,108,98,111,120,47,97,112,112,115,47,114,117,115,116,114,111,118,101,114,47,112,108,117,103,105,110,115,47,105,110,116,101,108,108,105,106,45,114,117,115,116,47,108,105,98,47,105,110,116,101,108,108,105,106,45,114,117,115,116,46,106,97,114,33,47,105,99,111,110,115,47,101,120,112,117,105,47,114,117,115,116,70,105,108,101,46,115,118,103]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$PROJECT_DIR$/Cargo.toml" file-id="155628" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="242">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"Cargo.toml","foregroundColor":-8336444,"textAttributes":{"name":"a","children":[{"name":"option","attributes":{"name":"FOREGROUND","value":"80cbc4"}}]},"icon":[10,45,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,85,114,108,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,-121,1,10,-124,1,106,97,114,58,102,105,108,101,58,47,104,111,109,101,47,109,105,107,97,47,46,108,111,99,97,108,47,115,104,97,114,101,47,74,101,116,66,114,97,105,110,115,47,84,111,111,108,98,111,120,47,97,112,112,115,47,114,117,115,116,114,111,118,101,114,47,112,108,117,103,105,110,115,47,105,110,116,101,108,108,105,106,45,114,117,115,116,47,108,105,98,47,105,110,116,101,108,108,105,106,45,114,117,115,116,46,106,97,114,33,47,105,99,111,110,115,47,101,120,112,117,105,47,99,97,114,103,111,46,115,118,103]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$USER_HOME$/clip.txt" file-id="205130" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="1232">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"clip.txt","foregroundColor":-3092263,"textAttributes":{"name":"a"},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,73,10,18,102,105,108,101,84,121,112,101,115,47,116,101,120,116,46,115,118,103,18,24,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,116,101,120,116,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-122,-48,-19,-85,-2,-1,-1,-1,-1,1,48,0]}]]></tab>
+      </file>
+      <file>
+        <entry file="file://$USER_HOME$/.config/clip.css" file-id="192866" managing-fs="1776222050593">
+          <provider editor-type-id="text-editor" selected="true">
+            <state relative-caret-position="418">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+        <tab><![CDATA[{"tabTitle":"clip.css","foregroundColor":-3092263,"textAttributes":{"name":"a"},"icon":[10,57,99,111,109,46,105,110,116,101,108,108,105,106,46,117,105,46,105,99,111,110,115,46,82,97,115,116,101,114,105,122,101,100,73,109,97,103,101,68,97,116,97,76,111,97,100,101,114,68,101,115,99,114,105,112,116,111,114,18,71,10,17,102,105,108,101,84,121,112,101,115,47,99,115,115,46,115,118,103,18,23,101,120,112,117,105,47,102,105,108,101,84,121,112,101,115,47,99,115,115,46,115,118,103,26,12,99,111,109,46,105,110,116,101,108,108,105,106,40,-107,-61,-84,-104,-7,-1,-1,-1,-1,1,48,0]}]]></tab>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTypeUsageLocalSummary"><![CDATA[{
+  "data": {
+    "PLAIN_TEXT": {
+      "usageCount": 9,
+      "lastUsed": 1778287644320
+    },
+    "CSS": {
+      "usageCount": 9,
+      "lastUsed": 1778287644166
+    },
+    "Rust": {
+      "usageCount": 9,
+      "lastUsed": 1778287644027
+    },
+    "TOML": {
+      "usageCount": 10,
+      "lastUsed": 1778287644163
+    }
+  }
+}]]></component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>}.con</find>
+      <find />
+      <find>unwrap(</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>}/.con</replace>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">{
+  &quot;changedPaths&quot;: [
+    &quot;/home/mika/clip.txt&quot;,
+    &quot;/home/mika/RustroverProjects/Clipboard-Manager/Cargo.lock&quot;,
+    &quot;/home/mika/.config/clip.css&quot;,
+    &quot;/home/mika/RustroverProjects/Clipboard-Manager/Cargo.toml&quot;,
+    &quot;/home/mika/RustroverProjects/Clipboard-Manager/src/main.rs&quot;
+  ]
+}</component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JunieThinkMoreToggleService">
+    <option name="sessions">
+      <map>
+        <entry key="40cd46f3-aefa-42b4-b65c-930578e38a55" value="false" />
+        <entry key="5bca80c6-e772-448c-9622-99c6979bbe1b" value="false" />
+        <entry key="5e2ffd84-163d-461a-9aa7-888284d19772" value="false" />
+        <entry key="6309aa7a-94a3-4094-8485-339e6cb80348" value="false" />
+        <entry key="6473f48b-cc35-4813-82af-e6e384db5be0" value="false" />
+        <entry key="90be3389-2f31-47f9-b398-b3164e9c0d60" value="false" />
+        <entry key="a29ca506-9c7c-409c-a745-b79809993d30" value="false" />
+        <entry key="c160c66a-8a72-429e-843f-dc84a75437cd" value="false" />
+        <entry key="c31f4884-f8aa-47a3-8031-acd75aac3c38" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="LanguageUsageStatistics">
+    <language id="CSS">
+      <summary usageCount="9" lastUsage="1778287644166" />
+    </language>
+    <language id="Rust">
+      <summary usageCount="9" lastUsage="1778287644028" />
+    </language>
+    <language id="TEXT">
+      <summary usageCount="9" lastUsage="1778287644320" />
+    </language>
+    <language id="TOML">
+      <summary usageCount="10" lastUsage="1778287644163" />
+    </language>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Clipboard-Manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Clipboard-Manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target}" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Clipboard-Manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target}" type="462c0819:PsiDirectoryNode" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release}" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+          <presentation>
+            <attributes />
+            <data iconPath="expui/toolwindows/project.svg" iconPlugin="com.intellij" isLeaf="false" text="Clipboard-Manager" />
+            <item name="Clipboard-Manager" type="b2602c69:ProjectViewProjectNode" />
+            <presentation>
+              <attributes>
+                <map>
+                  <entry key="filePath" value="$PROJECT_DIR$" />
+                </map>
+              </attributes>
+              <data iconPath="expui/nodes/folder.svg" iconPlugin="com.intellij" isLeaf="false" text="Clipboard-Manager" />
+              <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager}" type="462c0819:PsiDirectoryNode" />
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/src" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/sourceRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="src" />
+                <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/src}" type="462c0819:PsiDirectoryNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/target" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="target" />
+                <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target}" type="462c0819:PsiDirectoryNode" />
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/target/debug" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="debug" />
+                  <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/debug}" type="462c0819:PsiDirectoryNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/target/release" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="release" />
+                  <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release}" type="462c0819:PsiDirectoryNode" />
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/.fingerprint" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text=".fingerprint" />
+                    <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release/.fingerprint}" type="462c0819:PsiDirectoryNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/build" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="build" />
+                    <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release/build}" type="462c0819:PsiDirectoryNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/deps" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="false" text="deps" />
+                    <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release/deps}" type="462c0819:PsiDirectoryNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/examples" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="true" text="examples" />
+                    <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release/examples}" type="462c0819:PsiDirectoryNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/incremental" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/nodes/excludeRoot.svg" iconPlugin="com.intellij" isLeaf="true" text="incremental" />
+                    <item name="dir{file:///home/mika/RustroverProjects/Clipboard-Manager/target/release/incremental}" type="462c0819:PsiDirectoryNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/.cargo-lock" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/fileTypes/text.svg" iconPlugin="com.intellij" isLeaf="true" text=".cargo-lock" />
+                    <item name=".cargo-lock" type="ab9368bb:PsiFileNode" />
+                  </presentation>
+                  <presentation>
+                    <attributes>
+                      <map>
+                        <entry key="filePath" value="$PROJECT_DIR$/target/release/Clipboard-Manager.d" />
+                      </map>
+                    </attributes>
+                    <data iconPath="expui/fileTypes/text.svg" iconPlugin="com.intellij" isLeaf="true" text="Clipboard-Manager.d" />
+                    <item name="Clipboard-Manager.d" type="ab9368bb:PsiFileNode" />
+                  </presentation>
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/target/.rustc_info.json" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/fileTypes/json.svg" iconPlugin="com.intellij" isLeaf="true" text=".rustc_info.json" />
+                  <item name=".rustc_info.json" type="ab9368bb:PsiFileNode" />
+                </presentation>
+                <presentation>
+                  <attributes>
+                    <map>
+                      <entry key="filePath" value="$PROJECT_DIR$/target/CACHEDIR.TAG" />
+                    </map>
+                  </attributes>
+                  <data iconPath="expui/fileTypes/jsp.svg" iconPlugin="com.intellij" isLeaf="true" text="CACHEDIR.TAG" />
+                  <item name="CACHEDIR.TAG" type="ab9368bb:PsiFileNode" />
+                </presentation>
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/.gitignore" />
+                  </map>
+                </attributes>
+                <data iconPath="expui/fileTypes/ignored.svg" iconPlugin="com.intellij" isLeaf="true" text=".gitignore" />
+                <item name=".gitignore" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/Cargo.lock" />
+                  </map>
+                </attributes>
+                <data iconPath="icons/expui/cargoLock.svg" iconPlugin="com.jetbrains.rust" isLeaf="true" text="Cargo.lock" />
+                <item name="Cargo.lock" type="ab9368bb:PsiFileNode" />
+              </presentation>
+              <presentation>
+                <attributes>
+                  <map>
+                    <entry key="filePath" value="$PROJECT_DIR$/Cargo.toml" />
+                  </map>
+                </attributes>
+                <data iconPath="icons/expui/cargo.svg" iconPlugin="com.jetbrains.rust" isLeaf="true" text="Cargo.toml" />
+                <item name="Cargo.toml" type="ab9368bb:PsiFileNode" />
+              </presentation>
+            </presentation>
+            <presentation>
+              <attributes />
+              <data iconPath="expui/nodes/library.svg" iconPlugin="com.intellij" isLeaf="false" text="External Libraries" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </presentation>
+            <presentation>
+              <attributes />
+              <data iconPath="expui/fileTypes/scratches.svg" iconPlugin="com.intellij" isLeaf="false" text="Scratches and Consoles" />
+              <item name="Scratches and Consoles" type="b85a3e1f:ScratchTreeStructureProvider$MyProjectNode" />
+            </presentation>
+          </presentation>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="QueryFileSettings">
+    <option name="projectQueriesDirectory" value="$PROJECT_DIR$/.idea/queries" />
+  </component>
+  <component name="TerminalTabsStorage">
+    <option name="tabs">
+      <TerminalSessionPersistedTab name="Local" workingDirectory="$PROJECT_DIR$" processType="SHELL">
+        <option name="shellCommand">
+          <option value="/usr/bin/zsh" />
+          <option value="-i" />
+        </option>
+        <option name="envVariables">
+          <map />
+        </option>
+      </TerminalSessionPersistedTab>
+    </option>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="23718000" />
+  </component>
+  <component name="ToolWindowManager">
+    <layoutV2>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20290457" />
+      <window_info id="Commit" order="1" weight="0.215301" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" weight="0.32994187" />
+      <window_info anchor="bottom" id="Services" order="3" />
+      <window_info anchor="bottom" id="Build" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="5" weight="0.2" />
+      <window_info anchor="right" id="RustCargo" order="6" weight="0.25656933" />
+      <window_info anchor="right" id="Terminal" order="7" weight="0.30738994" />
+      <window_info anchor="right" id="ElectroJunToolWindow" order="8" />
+      <unified_weights bottom="0.32994187" left="0.20290457" right="0.25656933" />
+    </layoutV2>
+    <recentWindows>
+      <value>Project</value>
+      <value>RustCargo</value>
+      <value>Commit</value>
+      <value>Problems View</value>
+      <value>Terminal</value>
+    </recentWindows>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="589" y="316" key="Github.CreateGistDialog" timestamp="1778074486373">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="589" y="316" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1778074486373" />
+    <state x="463" y="147" key="SettingsEditor" timestamp="1778016764113">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="463" y="147" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1778016764113" />
+    <state x="554" y="235" key="Vcs.Push.Dialog.v2" timestamp="1778075557548">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="554" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1778075557548" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Cargo.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="144" column="89" lean-forward="true" selection-start-line="144" selection-start-column="89" selection-end-line="144" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.config/clip.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/clip.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

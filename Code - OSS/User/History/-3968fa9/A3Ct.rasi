@@ -1,0 +1,105 @@
+* {
+    /* Sunset Palette */
+    night-sky:      #130822;
+    deep-violet:    #4e1260;
+    dusk-purple:    #8b3090;
+    sunset-magenta: #c44080;
+    crimson-cloud:  #b82040;
+    horizon-red:    #e85030;
+    ember-orange:   #f07820;
+    solar-white:    #fef0b0;
+
+    background-color:   transparent;
+    text-color:         @solar-white;
+    font:               "JetBrains Mono 12";
+}
+
+window {
+    background-color:   @night-sky; 
+    border:             1px @dusk-purple;; 
+    border-radius:      12px;
+    padding:            16px;
+    width:              480px;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+    spacing:            10px;
+}
+
+/* Search bar */
+inputbar {
+    background-color:   @deep-violet;
+    border-radius:      8px;
+    padding:            8px 12px;
+    spacing:            8px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @sunset-magenta;
+    font:               "JetBrains Mono Bold 12";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @solar-white;
+    placeholder:        "search...";
+    placeholder-color:  @dusk-purple;
+}
+
+/* Results list */
+listview {
+    background-color:   transparent;
+    lines:              8;
+    spacing:            4px;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      6px;
+    padding:            8px 12px;
+    spacing:            8px;
+    children:           [ element-icon, element-text ];
+}
+
+element normal.normal {
+    background-color:   transparent;
+    text-color:         @solar-white;
+}
+
+element selected.normal {
+    background-color:   @crimson-cloud;  /* selected item highlight */
+    text-color:         @solar-white;
+}
+
+element alternate.normal {
+    background-color:   @deep-violet;   /* alternating row tint */
+    text-color:         @solar-white;
+}
+
+element-icon {
+    background-color:   transparent;
+    size:               24px;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    vertical-align:     0.5;
+}
+
+/* No results */
+message {
+    background-color:   @deep-violet;
+    border-radius:      8px;
+    padding:            8px 12px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         @sunset-magenta;
+}

@@ -1,0 +1,12 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/RustroverProjects/Clipboard-Manager" value="true" />
+        <entry key="$USER_HOME$/RustroverProjects/ClipboardWriter" value="true" />
+        <entry key="$USER_HOME$/RustroverProjects/pirate-app-tauri" value="true" />
+        <entry key="$USER_HOME$/RustroverProjects/untitled" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

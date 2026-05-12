@@ -1,0 +1,19 @@
+<keymap version="1" name="XWin Proper insert inline proposal" parent="Default for XWin">
+  <action id="AIAssistant.CodeGeneration.Actions.Specify" />
+  <action id="AIAssistant.Editor.AskAiAssistantInEditor" />
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="ctrl back_quote" />
+  </action>
+  <action id="InsertInlineCompletionAction">
+    <keyboard-shortcut first-keystroke="enter" />
+  </action>
+  <action id="QuickChangeScheme" />
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl back_slash" />
+  </action>
+  <action id="TW.SplitRight">
+    <keyboard-shortcut first-keystroke="ctrl back_slash" />
+  </action>
+  <action id="Terminal.GenerateCommandFromText" />
+</keymap>

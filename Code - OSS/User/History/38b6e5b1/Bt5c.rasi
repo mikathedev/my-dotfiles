@@ -1,0 +1,106 @@
+* {
+    /* Pulled from your waybar style.css */
+    bar-bg:         #000000;
+    wireplumber:    #fff0f5;
+    muted:          #f53c3c;
+    media:          #e85030;
+    temperature:    #f0932b;
+    temp-critical:  #eb4d4b;
+    tray:           #2980b9;
+    media-text:     #fef0b0;
+
+    background-color:   transparent;
+    text-color:         @wireplumber;
+    font:               "JetBrains Mono 12";
+}
+
+window {
+    background-color:   @bar-bg;
+    border:             1px;
+    border-color:       @tray;
+    border-radius:      12px;
+    padding:            16px;
+    width:              480px;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+    spacing:            10px;
+}
+
+/* Search bar — matches custom-media widget */
+inputbar {
+    background-color:   @media;
+    border-radius:      8px;
+    padding:            8px 12px;
+    spacing:            8px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @media-text;
+    font:               "JetBrains Mono Bold 12";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @media-text;
+    placeholder:        "search...";
+    placeholder-color:  @muted;
+}
+
+listview {
+    background-color:   transparent;
+    lines:              8;
+    spacing:            4px;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      6px;
+    padding:            8px 12px;
+    spacing:            8px;
+    children:           [ element-icon, element-text ];
+}
+
+element normal.normal {
+    background-color:   transparent;
+    text-color:         @wireplumber;
+}
+
+/* selected — matches temperature widget */
+element selected.normal {
+    background-color:   @temperature;
+    text-color:         @bar-bg;
+}
+
+/* alternating — matches tray widget */
+element alternate.normal {
+    background-color:   @tray;
+    text-color:         @wireplumber;
+}
+
+element-icon {
+    background-color:   transparent;
+    size:               24px;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    vertical-align:     0.5;
+}
+
+message {
+    background-color:   @temp-critical;
+    border-radius:      8px;
+    padding:            8px 12px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         @wireplumber;
+}

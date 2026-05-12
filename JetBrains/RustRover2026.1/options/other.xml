@@ -1,0 +1,86 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontSize" value="15.0" />
+    <option name="presentationModeIdeScale" value="1.75" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "AIHubNotificationManager.lastTariffQuotaAvailable": "158437.145",
+    "AIHubNotificationManager.lastUsedLicenseType": "FREE",
+    "CRATES_IO_INDEX_LAST_UPDATE": "1778290244530",
+    "FindSplitterProportion": "0.43899018",
+    "InstalledPluginsSearchHistory": "terminal\nter\ncss\ncs\nc",
+    "KEYMAP": "terminal\nsplit right",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "0",
+    "MarketplacePluginsSearchHistory": "gtk\ngt\ncss\ntheme",
+    "RunOnceActivity.AIPromoWindowAdvisorPreheat": "true",
+    "RunOnceActivity.BH_2025.3.4": "true",
+    "RunOnceActivity.MCP settings loaded": "true",
+    "RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts": "true",
+    "RunOnceActivity.TerminalOptionsProvider.TerminalEngineMigration.2026.1": "true",
+    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
+    "RunOnceActivity.git.modal.commit.toggle": "true",
+    "RunOnceActivity.llm.claude.code.byok.migration": "true",
+    "RunOnceActivity.reset.auto.reparse.settings.to.default": "true",
+    "RunOnceActivity.rust.find.settings.fix": "true",
+    "RunOnceActivity.rust.first.ide.run": "true",
+    "RunOnceActivity.svelte.init.key": "true",
+    "SettingsSearchHistory": "terminal\ngit\nopen terminal\nsplit right",
+    "TerminalCompletionPopupPromotion.shownCount": "3",
+    "WAYLAND_NOTIFICATION_ALREADY_SHOWN": "true",
+    "WelcomeFeature.SHORT_WELCOME_GUIDE_SHOWN": "true",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "better.highlights.update.timestamp": "1778245755292",
+    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "evlsprt3.261": "5",
+    "experimental.ui.first.switch": "true",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "261.22158.331",
+    "fileTypeChangedCounter": "4",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "13.0",
+    "git.working.trees.stop.showing.new.badge": "true",
+    "got.it.tooltip.Plugins Auto-Update": "1",
+    "got.it.tooltip.ai.assistant.commit.message.generation.and.branch.reference": "1",
+    "got.it.tooltip.settings.sync.in.settings": "1",
+    "ide.islands.ab3": "true",
+    "ide.islands.new.darcula": "true",
+    "llm.installer.last.toolwindow.state": "AI_ASSISTANT",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "previousColorScheme": "_@user_Gerry Dark",
+    "registry.to.advanced.settings.migration.build": "RR-261.22158.331",
+    "tab_selection_count": "5",
+    "trial.state.last.availability.check": "0",
+    "ts.lib.d.ts.version": "5.9.3",
+    "whats.new.last.shown.version": "2026-1-22158-576ffe1d66c9132d7b0af5a466534e36f3d0fa41"
+  },
+  "keyToStringList": {
+    "AIHubNotificationManager.gotItNotifications": [
+      "FREE_ENABLED"
+    ],
+    "AIHubNotificationManager.lastAllNotifications": [],
+    "AIHubNotificationManager.notifications": [],
+    "AIHubNotificationManager.seenNotifications": [],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.database.vfs.DbStorageFileType$Detector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="ReworkedTerminalUsage">{
+  &quot;enterKeyPressedTimes&quot;: 197,
+  &quot;completionPopupShownTimes&quot;: 8,
+  &quot;completionItemChosenTimes&quot;: 4,
+  &quot;firstIdeSessionMoment&quot;: {
+    &quot;type&quot;: &quot;org.jetbrains.plugins.terminal.TerminalFirstIdeSessionMoment.Version&quot;,
+    &quot;build&quot;: &quot;RR-261.22158.331&quot;
+  }
+}</component>
+</application>
